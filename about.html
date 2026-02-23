@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SureSet </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-container">
+            <div class="topbar-content">
+                <div class="topbar-left">
+                    <a href="tel:+1234567890" class="topbar-contact-item">
+                        <i class="fas fa-phone topbar-icon"></i>
+                        <span>+123 456 7890</span>
+                    </a>
+                    <a href="mailto:sureset.info@aleramedtech.com" class="topbar-contact-item">
+                        <i class="fas fa-envelope topbar-icon"></i>
+                        <span>sureset.info@aleramedtech.com</span>
+                    </a>
+                </div>
+                <div class="topbar-right">
+                    <a href="#" class="topbar-social-link">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="topbar-social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="topbar-social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="topbar-social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <a href="#" class="navbar-logo-link">
+                    <img src="img/SureSet logo.png" alt="SureSet Logo" class="navbar-logo">
+                </a>
+
+                <button class="navbar-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li class="navbar-menu-item">
+                        <a href="index.html" class="navbar-menu-link">Home</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <a href="about.html" class="navbar-menu-link">About Us</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <a href="safetrak-technology.html" class="navbar-menu-link">SafeTrak Technology</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <a href="#" class="navbar-menu-link">Products</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <a href="resourses.html" class="navbar-menu-link">Resources</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <a href="contact.html" class="navbar-menu-link">Contact Us</a>
+                    </li>
+                    <li class="navbar-menu-item">
+                        <button class="navbar-cta-button" id="openModalBtn">Request Evaluation Samples</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Overlay (shared) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            <button class="close-btn" id="closeModalBtn" aria-label="Close"></button>
+
+            <div class="form-header">
+                <h1 id="headerTitle">Request Evaluation Samples</h1>
+                <p id="headerSubtitle">Complete the form below to receive SureSet™ evaluation samples</p>
+            </div>
+
+            <div class="form-body">
+                <div class="form-content" id="formContent">
+                    <form id="evaluationForm" novalidate>
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="error-message" id="fullNameError">Please enter your full name</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Work Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="emailError">Please enter a valid work email address</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation <span class="required">*</span></label>
+                            <input type="text" id="designation" name="designation" required
+                                placeholder="e.g., Nurse Manager, Physician, Clinical Director">
+                            <span class="error-message" id="designationError">Please enter your designation</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department <span class="required">*</span></label>
+                            <input type="text" id="department" name="department" required
+                                placeholder="e.g., Emergency, ICU, Cardiology">
+                            <span class="error-message" id="departmentError">Please enter your department</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="facilityName">Hospital/Clinic Name <span class="required">*</span></label>
+                            <input type="text" id="facilityName" name="facilityName" required>
+                            <span class="error-message" id="facilityNameError">Please enter your hospital or clinic
+                                name</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="productType">Product Type <span class="required">*</span></label>
+                            <select id="productType" name="productType" required>
+                                <option value="">-- Select Product Type --</option>
+                                <option value="sureset-peripheral-iv">SureSet™ Peripheral IV Securement Device</option>
+                                <option value="sureset-picc">SureSet™ PICC Line Securement</option>
+                                <option value="sureset-central-line">SureSet™ Central Line Securement</option>
+                                <option value="sureset-dialysis">SureSet™ Dialysis Catheter Securement</option>
+                                <option value="multiple">Multiple Products</option>
+                            </select>
+                            <span class="error-message" id="productTypeError">Please select a product type</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                            <span class="error-message" id="phoneError">Please enter a valid phone number</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estimatedVolume">Estimated Monthly Volume</label>
+                            <input type="text" id="estimatedVolume" name="estimatedVolume"
+                                placeholder="e.g., 500 units">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additionalInfo">Additional Information</label>
+                            <textarea id="additionalInfo" name="additionalInfo"
+                                placeholder="Please share any specific requirements or questions..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Submit Request</button>
+                    </form>
+                </div>
+
+                <div class="thank-you-content" id="thankYouContent">
+                    <div class="thank-you-icon">
+                        <div class="checkmark"></div>
+                    </div>
+                    <h2>Thank You!</h2>
+                    <p>Your request has been submitted successfully. Our team will contact you within 24-48 hours.</p>
+
+                    <div class="download-section">
+                        <h3>📄 Download Product Information</h3>
+                        <div class="download-buttons">
+                            <a href="pdf/Sureset_Vascular Acess Safety.pdf" class="download-btn secondary-btn"
+                                target="_blank">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                                Download Full Product Catalog
+                            </a>
+                        </div>
+                    </div>
+
+                    <button class="submit-btn" id="closeThankYou">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modalOverlay');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const form = document.getElementById('evaluationForm');
+        const formContent = document.getElementById('formContent');
+        const thankYouContent = document.getElementById('thankYouContent');
+        const headerTitle = document.getElementById('headerTitle');
+        const headerSubtitle = document.getElementById('headerSubtitle');
+        const invalidEmailDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'yandex.com', 'zoho.com'];
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            showForm();
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        function showForm() {
+            formContent.classList.remove('hidden');
+            thankYouContent.classList.remove('active');
+            headerTitle.textContent = 'Request Evaluation Samples';
+            headerSubtitle.textContent = 'Complete the form below to receive SureSet™ evaluation samples';
+        }
+
+        function showThankYou() {
+            formContent.classList.add('hidden');
+            thankYouContent.classList.add('active');
+            headerTitle.textContent = 'Request Submitted!';
+            headerSubtitle.textContent = 'Access your resources below';
+            document.querySelector('.modal-container').scrollTop = 0;
+        }
+
+        document.getElementById('closeThankYou').addEventListener('click', () => {
+            closeModal();
+            setTimeout(() => {
+                showForm();
+                form.reset();
+            }, 300);
+        });
+
+        function validateEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                return { valid: false, message: 'Please enter a valid email address' };
+            }
+
+            const domain = email.split('@')[1].toLowerCase();
+            if (invalidEmailDomains.includes(domain)) {
+                return { valid: false, message: 'Please use a work email address. Personal email domains (Gmail, Yahoo, Hotmail, etc.) are not accepted' };
+            }
+
+            return { valid: true };
+        }
+
+        function validatePhone(phone) {
+            const phonePattern = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
+            return phonePattern.test(phone.replace(/\s/g, ''));
+        }
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            field.classList.add('error');
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+        }
+
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            field.classList.remove('error');
+            errorElement.classList.remove('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('email').addEventListener('blur', function () {
+                const email = this.value.trim();
+                if (email) {
+                    const validation = validateEmail(email);
+                    if (!validation.valid) {
+                        showError('email', validation.message);
+                    } else {
+                        clearError('email');
+                    }
+                }
+            });
+
+            document.getElementById('phone').addEventListener('blur', function () {
+                const phone = this.value.trim();
+                if (phone && !validatePhone(phone)) {
+                    showError('phone', 'Please enter a valid phone number');
+                } else if (phone) {
+                    clearError('phone');
+                }
+            });
+
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('input', function () {
+                    clearError(this.id);
+                });
+            });
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                let isValid = true;
+
+                const fullName = document.getElementById('fullName').value.trim();
+                if (!fullName) {
+                    showError('fullName', 'Please enter your full name');
+                    isValid = false;
+                } else {
+                    clearError('fullName');
+                }
+
+                const email = document.getElementById('email').value.trim();
+                const emailValidation = validateEmail(email);
+                if (!email || !emailValidation.valid) {
+                    showError('email', emailValidation.message || 'Please enter a valid work email address');
+                    isValid = false;
+                } else {
+                    clearError('email');
+                }
+
+                const designation = document.getElementById('designation').value.trim();
+                if (!designation) {
+                    showError('designation', 'Please enter your designation');
+                    isValid = false;
+                } else {
+                    clearError('designation');
+                }
+
+                const department = document.getElementById('department').value.trim();
+                if (!department) {
+                    showError('department', 'Please enter your department');
+                    isValid = false;
+                } else {
+                    clearError('department');
+                }
+
+                const facilityName = document.getElementById('facilityName').value.trim();
+                if (!facilityName) {
+                    showError('facilityName', 'Please enter your hospital or clinic name');
+                    isValid = false;
+                } else {
+                    clearError('facilityName');
+                }
+
+                const productType = document.getElementById('productType').value;
+                if (!productType) {
+                    showError('productType', 'Please select a product type');
+                    isValid = false;
+                } else {
+                    clearError('productType');
+                }
+
+                const phone = document.getElementById('phone').value.trim();
+                if (!phone || !validatePhone(phone)) {
+                    showError('phone', 'Please enter a valid phone number');
+                    isValid = false;
+                } else {
+                    clearError('phone');
+                }
+
+                if (isValid) {
+                    console.log('Form submitted successfully!', {
+                        fullName,
+                        email,
+                        designation,
+                        department,
+                        facilityName,
+                        productType,
+                        phone,
+                        estimatedVolume: document.getElementById('estimatedVolume').value.trim(),
+                        additionalInfo: document.getElementById('additionalInfo').value.trim()
+                    });
+
+                    showThankYou();
+                } else {
+                    const firstError = form.querySelector('.error');
+                    if (firstError) {
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- SUB PAGE HERO SECTION -->
+    <section class="sub-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb sub-hero-breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                About Us
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <!-- Page Title -->
+                    <h1 class="sub-hero-title">About Us</h1>
+
+                    <!-- Subtitle -->
+                    <p class="sub-hero-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta odit non expedita ab tenetur
+                        tempora blanditiis placeat quos eveniet nihil.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content-grid">
+                <div class="about-image-wrapper">
+                    <img src="img/rapid different.png" alt="Alera Medtech" class="about-main-image">
+
+                </div>
+
+                <div class="about-text-content">
+                    <h2 class="about-main-title">Alera Medtech:</h2>
+                    <h3 class="about-subtitle">A Radically Different Medical Device Company</h3>
+                    <p class="about-description-text">
+                        Alera Medtech was created with a clear belief: essential medical devices
+                        deserve far more innovation than they have received. Across healthcare,
+                        many widely used devices have changed very little over several decades.
+                        Clinical practice has moved forward, yet the tools clinicians rely on every
+                        day have not kept pace. This creates avoidable complications, unnecessary
+                        costs, and limitations in patient care.
+                    </p>
+                    <p class="about-description-text">
+                        Alera exists to overcome these limitations.
+                    </p>
+                    <p class="about-description-text">We identify under-innovated, high-impact medical devices and
+                        redesign them using modern engineering, strong intellectual property, and a commitment to
+                        patient access. Our development approach allows rapid and scalable innovation so that improved
+                        devices can reach the market faster and more cost effectively than traditional medical
+                        technology pathways.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: What Makes Alera Different -->
+    <section class="alera-hero-section">
+        <div class="container">
+            <h1 class="alera-section-title">What Makes Alera Different -</h1>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="alera-feature-card">
+                        <div class="alera-icon-wrapper">
+                            <img src="img/alera-1.png" alt="">
+                        </div>
+                        <h3 class="alera-feature-title">Innovation Where It Matters Most</h3>
+                        <p class="alera-feature-description">
+                            We focus on devices that are clinically essential and used in high volumes, yet have
+                            remained largely unchanged for years. By concentrating on overlooked categories rather than
+                            emerging trends, Alera creates improvements that benefit large patient populations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="alera-feature-card">
+                        <div class="alera-icon-wrapper">
+                            <img src="img/alera-2.svg" alt="">
+                        </div>
+                        <h3 class="alera-feature-title">Rapid and Scalable Development</h3>
+                        <p class="alera-feature-description">
+                            Alera uses streamlined design, engineering, and manufacturing processes that compress
+                            development timelines while maintaining quality and regulatory rigor. This model allows us
+                            to deliver significant advancements in a fraction
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="alera-feature-card">
+                        <div class="alera-icon-wrapper">
+                            <img src="img/alera-3.png" alt="">
+                        </div>
+                        <h3 class="alera-feature-title">Intellectual Property as a Strategic Foundation</h3>
+                        <p class="alera-feature-description">
+                            Most Alera products are protected by strong patents and proprietary design architectures.
+                            Intellectual property is central to our strategy and ensures consistent differentiation for
+                            clinicians, patients, and partners who rely on our solutions.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="alera-feature-card">
+                        <div class="alera-icon-wrapper">
+                            <img src="img/alera-4.png" alt="">
+                        </div>
+                        <h3 class="alera-feature-title">Innovation That Remains Affordable</h3>
+                        <p class="alera-feature-description">
+                            Alera is committed to ensuring that improved performance never results in higher financial
+                            burden for patients or healthcare systems. Our engineering priorities support clinical
+                            value, operational efficiency, and cost sustainability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="nt-container mb-5">
+        <!-- Header Section -->
+        <h1 class="nt-main-title">What We Build</h1>
+        <p class="nt-subtitle">
+            Alera focuses on modernizing essential devices in three core clinical categories. Each product family is
+            built with a commitment to safety, usability, and meaningful technological advancement.
+        </p>
+
+        <!-- Navigation Tabs -->
+        <ul class="nav nt-nav-tabs" id="productTabs" role="tablist">
+            <li class="nav-item flex-fill" role="presentation">
+                <button class="nt-nav-link active w-100" id="vascular-tab" data-bs-toggle="tab"
+                    data-bs-target="#vascular" type="button" role="tab" aria-controls="vascular" aria-selected="true">
+                    Vascular Access
+                </button>
+            </li>
+            <li class="nav-item flex-fill" role="presentation">
+                <button class="nt-nav-link w-100" id="neurology-tab" data-bs-toggle="tab" data-bs-target="#neurology"
+                    type="button" role="tab" aria-controls="neurology" aria-selected="false">
+                    Neurology
+                </button>
+            </li>
+            <li class="nav-item flex-fill" role="presentation">
+                <button class="nt-nav-link w-100" id="urology-tab" data-bs-toggle="tab" data-bs-target="#urology"
+                    type="button" role="tab" aria-controls="urology" aria-selected="false">
+                    Urology
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="productTabsContent">
+            <!-- Vascular Access Tab -->
+            <div class="tab-pane fade show active" id="vascular" role="tabpanel" aria-labelledby="vascular-tab">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="nt-section-title">Vascular Access</h2>
+                        <p class="nt-section-description">
+                            Alera develops advanced securement and infusion solutions designed to reduce complications
+                            and improve workflow efficiency.
+                        </p>
+                        <p class="nt-portfolio-title">Our vascular access portfolio includes:</p>
+
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-name">SureSet Securement Systems</div>
+                                <div class="nt-product-description">
+                                    featuring SafeTrak Strain Relief Technology for tubing and catheter stability
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-name">Dermaflush and Duoflush next-generation saline flush
+                                    syringes</div>
+                                <div class="nt-product-description">
+                                    designed for safety, performance, and ease of use
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="nt-closing-text">
+                            These solutions help prevent dislodgement and migration while preventing infections,
+                            supporting comfort and enhancing clinical efficiency.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="img/vascular access.png" alt="Vascular Access Medical Procedure"
+                            class="nt-product-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Neurology Tab -->
+            <div class="tab-pane fade" id="neurology" role="tabpanel" aria-labelledby="neurology-tab">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="nt-section-title">Neurology</h2>
+                        <p class="nt-section-description">
+                            Cernode range of neurology products support accurate and reliable neurodiagnostic recording and monitoring. Our solutions include:
+                        </p>
+
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">Hypodermic needle electrodes</div>
+                            </div>
+                        </div>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">EEG electrodes</div>
+                            </div>
+                        </div>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">EMG electrodes</div>
+                            </div>
+                        </div>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">IONM electrodes and accessories</div>
+                            </div>
+                        </div>
+                        <p class="nt-closing-text">
+                            Each device is engineered for consistent signal capture, user-friendly application, and patient comfort.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="img/nuerogy.jpeg"
+                            alt="Neurology" class="nt-product-image" style="border-radius: 30px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urology Tab -->
+            <div class="tab-pane fade" id="urology" role="tabpanel" aria-labelledby="urology-tab">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="nt-section-title">Urology</h2>
+                        <p class="nt-section-description">
+                            Alera’s nxtcath range of urology products advance urinary care through devices that improve securement, comfort, and durability. Our urology portfolio includes:
+                        </p>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">Male external incontinence devices</div>
+                            </div>
+                        </div>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">Urine collection systems including leg bags, drainage bags, and accessories</div>
+                            </div>
+                        </div>
+                        <div class="nt-product-item d-flex align-items-start">
+                            <input type="checkbox" checked>
+                            <div>
+                                <div class="nt-product-namez">Catheter anchoring devices designed for stability and skin friendliness</div>
+                            </div>
+                        </div>
+                        <p class="nt-closing-text">
+                            This category addresses long-standing clinical challenges through modern materials and thoughtful engineering.
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="img/urology.jpeg"
+                            alt="Urology" class="nt-product-image" style="border-radius: 30px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Our Philosophy -->
+    <section class="alera-philosophy-section">
+        <div class="container">
+            <h2 class="alera-philosophy-title">Our Philosophy</h2>
+            <p class="alera-philosophy-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="alera-philosophy-card d-flex">
+                        <div>
+                            <img src="img/icon-abt-1.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="alera-philosophy-card-title">
+                                Simplicity First
+                            </h3>
+                            <p class="alera-philosophy-card-text">Devices should support clinicians and simplify care.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="alera-philosophy-card d-flex">
+                        <div>
+                            <img src="img/icon-abt-2.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="alera-philosophy-card-title">
+                                Protect the Patient
+                            </h3>
+                            <p class="alera-philosophy-card-text">Safety and comfort guide every design decision.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="alera-philosophy-card d-flex">
+                        <div>
+                            <img src="img/icon-abt-3.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="alera-philosophy-card-title">
+                                Intellectual Property With Purpose
+                            </h3>
+                            <p class="alera-philosophy-card-text">IP should represent real clinical value and functional
+                                advancement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="alera-philosophy-card d-flex">
+                        <div>
+                            <img src="img/icon-abt-4.png" alt="">
+                        </div>
+                        <div>
+                            <h3 class="alera-philosophy-card-title">
+                                Access for All
+                            </h3>
+                            <p class="alera-philosophy-card-text">Innovation is only meaningful when patients can afford
+                                it.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Our Commitment -->
+    <section class="alera-commitment-section">
+        <div class="container text-center">
+            <h2 class="alera-commitment-title">Our Commitment</h2>
+            <p class="alera-commitment-text">
+                Alera Medtech collaborates with clinicians, researchers, and healthcare systems to solve practical
+                challenges with engineering that is focused, efficient, and human centered. Our success is measured in
+                clinical impact, ease of use, and improved patient experiences.
+            </p>
+            <p class="alera-commitment-text">
+                Alera is proud to be a company that moves quickly, thinks differently, and invents with purpose.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="vas-footer">
+        <div class="container">
+            <div class="row vas-footer-top g-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="vas-footer-logo">
+                        <img src="img/SureSet logo.png" width="150" alt="">
+                    </div>
+                    <p class="vas-footer-text">
+                        PN: SSIV-5-US, Rev. 1, Nov. 2025<br>
+                        SureSet and Safe-Track Strain Relief Technology are registered trademarks of Alera Medtech LLC.
+                    </p>
+                    <div class="vas-social-links">
+                        <a href="#" class="vas-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h3 class="vas-footer-section-title">Usefull Links</h3>
+                    <ul class="vas-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="resourses.html">Resources</a></li>
+                        <li><a href="#">Distributors</a></li>
+                        <li><a href="#">Order</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h3 class="vas-footer-section-title">Contact Us</h3>
+                    <div class="vas-contact-item">
+                        <div class="vas-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div class="vas-contact-label">Address</div>
+                            <p class="vas-contact-value">United States</p>
+                        </div>
+                    </div>
+                    <div class="vas-contact-item">
+                        <div class="vas-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <div class="vas-contact-label">Phone</div>
+                            <p class="vas-contact-value">+012 345 6789</p>
+                        </div>
+                    </div>
+                    <div class="vas-contact-item">
+                        <div class="vas-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div class="vas-contact-label">Email</div>
+                            <p class="vas-contact-value">sureset.info@aleramedtech.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vas-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="vas-copyright">© 2025 Alera Medtech LLC. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="vas-footer-bottom-links">
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="#">Legal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('navbar-menu-active');
+        }
+    </script>
+</body>
+
+</html>
