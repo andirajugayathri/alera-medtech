@@ -47,36 +47,41 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-content">
-                <a href="#" class="navbar-logo-link">
+                <a href="index.html" class="navbar-logo-link">
                     <img src="img/aleramedtech_logo.png" alt="Alera Medtech Logo" class="navbar-logo">
                 </a>
-
                 <button class="navbar-toggle" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </button>
-
                 <ul class="navbar-menu" id="navbarMenu">
-                    <li class="navbar-menu-item">
-                        <a href="index.html" class="navbar-menu-link">Home</a>
+                    <li class="navbar-menu-item"><a href="index.html" class="navbar-menu-link">Home</a></li>
+                    <li class="navbar-menu-item"><a href="about.html" class="navbar-menu-link">About Us</a></li>
+                    <!-- <li class="navbar-menu-item"><a href="our-products.html" class="navbar-menu-link active">Our
+                            Products</a></li> -->
+                    <li class="navbar-menu-item dropdown">
+                        <a href="#" class="navbar-menu-link">Our Products</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Neurology</li>
+                            <li><a class="dropdown-item" href="dpncheck-overview.html" target="_blank">DPNCheck
+                                    overview</a></li>
+                            <li><a class="dropdown-item" href="cernode-overview.html">Cernode Neurology Products</a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-header">Critical Care</li>
+                            <li><a class="dropdown-item" href="sureset-overview.html" target="_blank">SureSet
+                                    Securement Devices</a></li>
+                            <li><a class="dropdown-item" href="dermaflush-overview.html">Dermaflush Prefilled Flush
+                                    Syringes</a></li>
+                            <li><a class="dropdown-item" href="clyncap.html">ClynCap Infection Control</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-header">Resourses</li>
+                            <li><a class="dropdown-item" href="#" target="_blank">IFU</a></li>
+                            <li><a class="dropdown-item" href="#">Brochures</a></li>
+                            <li><a class="dropdown-item" href="#">Whitepapers</a></li>
+                        </ul>
                     </li>
-                    <li class="navbar-menu-item">
-                        <a href="about.html" class="navbar-menu-link">About Us</a>
-                    </li>
-                    <li class="navbar-menu-item">
-                        <a href="safetrak-technology.html" class="navbar-menu-link">SafeTrak Technology</a>
-                    </li>
-                    <li class="navbar-menu-item">
-                        <a href="#" class="navbar-menu-link">Products</a>
-                    </li>
-                    <li class="navbar-menu-item">
-                        <a href="resourses.html" class="navbar-menu-link">Resources</a>
-                    </li>
-                    <li class="navbar-menu-item">
-                        <a href="contact.html" class="navbar-menu-link">Contact Us</a>
-                    </li>
-                    <li class="navbar-menu-item">
-                        <button class="navbar-cta-button" id="openModalBtn">Request Evaluation Samples</button>
-                    </li>
+                    <!-- <li class="navbar-menu-item"><a href="resourses.html" class="navbar-menu-link">Resources</a></li> -->
+                    <li class="navbar-menu-item"><a href="contact.html" class="navbar-menu-link">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -133,7 +138,8 @@
                             <label for="productType">Product Type <span class="required">*</span></label>
                             <select id="productType" name="productType" required>
                                 <option value="">-- Select Product Type --</option>
-                                <option value="sureset-peripheral-iv">Alera Medtech Peripheral IV Securement Device</option>
+                                <option value="sureset-peripheral-iv">Alera Medtech Peripheral IV Securement Device
+                                </option>
                                 <option value="sureset-picc">Alera Medtech PICC Line Securement</option>
                                 <option value="sureset-central-line">Alera Medtech Central Line Securement</option>
                                 <option value="sureset-dialysis">Alera Medtech Dialysis Catheter Securement</option>
@@ -431,7 +437,7 @@
             }
         });
     </script>
-    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="4000"
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="10000"
         data-bs-pause="false">
         <!-- Indicators -->
         <div class="carousel-indicators">
@@ -544,7 +550,8 @@
                 </div>
 
                 <div class="hero-right-content">
-                    <a href="#" class="watch-video-link" data-video="https://suresetsecure.com/wp-content/uploads/2025/11/SureSet-gif-SD-480p-udated-logo.mp4">
+                    <a href="#" class="watch-video-link"
+                        data-video="https://suresetsecure.com/wp-content/uploads/2025/11/SureSet-gif-SD-480p-udated-logo.mp4">
                         <img src="img/about.png" alt="Alera Medtech Product" class="hero-product-image">
                     </a>
                 </div>
@@ -692,12 +699,13 @@
                     <div class="introducing-video-container">
                         <img src="img/peripheral iv device.png" alt="Patient Care" class="introducing-background-image">
                         <div class="introducing-video-overlay">
-                            <a style="display: contents;" href="#" class="watch-video-link" data-video="https://suresetsecure.com/wp-content/uploads/2022/03/suresetVideo_01_a.mp4">
-                                    <button class="introducing-play-btn">
+                            <a style="display: contents;" href="#" class="watch-video-link"
+                                data-video="https://suresetsecure.com/wp-content/uploads/2022/03/suresetVideo_01_a.mp4">
+                                <button class="introducing-play-btn">
                                     <i class="fas fa-play introducing-play-icon"></i>
                                 </button>
                                 <span class="introducing-watch-text">Watch Video</span>
-                                </a>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -711,7 +719,8 @@
             <h1 class="vas-hero-title">A New Approach to Safe, Stable<br>Vascular Access</h1>
             <p class="vas-hero-subtitle">(Client content, placed after the benefits)</p>
             <p class="vas-hero-description">
-                Alera Medtech SafeTrak™ introduces a solution for vascular access securement using flexible motion-control
+                Alera Medtech SafeTrak™ introduces a solution for vascular access securement using flexible
+                motion-control
                 geometry and a secure, low-profile anchoring system. This proprietary design absorbs tension before it
                 reaches the catheter hub, reducing dislodgement, minimizing micro-motion, and maintaining consistent
                 catheter alignment.
@@ -811,11 +820,12 @@
                         <div class="col">
                             <div class="vas-benefit-card">
                                 <div class="vas-benefit-icon">
-                                        <img src="img/imp-1.png" alt="">
-                                    </div>
+                                    <img src="img/imp-1.png" alt="">
+                                </div>
                                 <h3 class="vas-benefit-title">Simple Applications</h3>
                                 <p class="vas-benefit-text">
-                                    Alera Medtech is applied to a standard protective dressing, allowing an easy and fast
+                                    Alera Medtech is applied to a standard protective dressing, allowing an easy and
+                                    fast
                                     setup of the infusion site.
                                 </p>
                             </div>
@@ -832,7 +842,7 @@
                                 </p>
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <div class="col ms-4">
@@ -875,7 +885,8 @@
                     </div>
                     <p class="vas-footer-text">
                         PN: SSIV-5-US, Rev. 1, Nov. 2025<br>
-                        Alera Medtech and Safe-Track Strain Relief Technology are registered trademarks of Alera Medtech LLC.
+                        Alera Medtech and Safe-Track Strain Relief Technology are registered trademarks of Alera Medtech
+                        LLC.
                     </p>
                     <div class="vas-social-links">
                         <a href="#" class="vas-social-link"><i class="fab fa-facebook-f"></i></a>
@@ -946,10 +957,14 @@
 
     <!-- Video Modal -->
     <div id="videoModal" class="video-modal" aria-hidden="true" style="display:none;">
-        <div class="video-modal-overlay" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1050;display:flex;align-items:center;justify-content:center;">
-            <div class="video-modal-container" role="dialog" aria-modal="true" style="background:#000;border-radius:8px;max-width:90%;width:900px;max-height:90%;overflow:hidden;position:relative;">
-                <button id="videoModalClose" aria-label="Close video" style="position:absolute;right:10px;top:8px;z-index:2;background:transparent;border:none;color:#fff;font-size:28px;cursor:pointer;">&times;</button>
-                <video id="modalVideo" controls playsinline style="width:100%;height:100%;display:block;background:#000;">
+        <div class="video-modal-overlay"
+            style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1050;display:flex;align-items:center;justify-content:center;">
+            <div class="video-modal-container" role="dialog" aria-modal="true"
+                style="background:#000;border-radius:8px;max-width:90%;width:900px;max-height:90%;overflow:hidden;position:relative;">
+                <button id="videoModalClose" aria-label="Close video"
+                    style="position:absolute;right:10px;top:8px;z-index:2;background:transparent;border:none;color:#fff;font-size:28px;cursor:pointer;">&times;</button>
+                <video id="modalVideo" controls playsinline
+                    style="width:100%;height:100%;display:block;background:#000;">
                     <source src="" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -979,13 +994,13 @@
                 modalVideo.load();
                 modal.style.display = 'block';
                 modal.setAttribute('aria-hidden', 'false');
-                try { modalVideo.play(); } catch (e) {}
+                try { modalVideo.play(); } catch (e) { }
             }
 
             function closeModal() {
                 if (!modal) return;
                 modalVideo.pause();
-                try { modalVideo.currentTime = 0; } catch (e) {}
+                try { modalVideo.currentTime = 0; } catch (e) { }
                 const source = modalVideo.querySelector('source');
                 source.src = '';
                 modalVideo.load();
