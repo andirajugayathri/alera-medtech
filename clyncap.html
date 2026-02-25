@@ -5,11 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClynCap™ — 10-Day IV Port Protection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <style>
         *,
         *::before,
@@ -20,19 +22,19 @@
         }
 
         :root {
-            --ink: #0d1117;
-            --ink-soft: #3a4150;
-            --ink-mute: #6b7585;
-            --teal: #0a7c6e;
-            --teal-mid: #0d9e8c;
-            --teal-lt: #10c4ad;
-            --aqua: #e0f7f5;
+            --ink: #1a1a2e;
+            --ink-soft: #444;
+            --ink-mute: #666;
+            --teal: #003BF2;
+            --teal-mid: #0030c0;
+            --teal-lt: #e8eeff;
+            --aqua: #f7f9ff;
             --cream: #f8f6f1;
             --white: #ffffff;
-            --rule: #d8dde6;
-            --serif: 'DM Serif Display', Georgia, serif;
-            --sans: 'DM Sans', system-ui, sans-serif;
-            --r: 6px;
+            --rule: #dde3f5;
+            --serif: 'Montserrat', sans-serif;
+            --sans: 'Montserrat', sans-serif;
+            --r: 8px;
         }
 
         html {
@@ -45,67 +47,14 @@
             color: var(--ink);
             line-height: 1.6;
             overflow-x: hidden;
+            font-size: 18px;
         }
 
-        /* ─── NAV ─────────────────────────────────────────────── */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5vw;
-            height: 64px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--rule);
-        }
+        /* ─── NAV OVERRIDE FOR CLYNCAP PAGE ────────────────────── */
+        /* We use the global navbar, but ensuring internal styles don't conflict */
 
-        .nav-logo {
-            font-family: var(--serif);
-            font-size: 1.35rem;
-            color: var(--teal);
-            letter-spacing: -0.02em;
-            text-decoration: none;
-        }
-
-        .nav-logo span {
-            color: var(--ink);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--ink-soft);
-            text-decoration: none;
-            letter-spacing: 0.01em;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--teal);
-        }
-
-        .nav-cta {
-            background: var(--teal);
-            color: var(--white) !important;
-            padding: 0.45rem 1.1rem;
-            border-radius: 100px;
-            font-weight: 600 !important;
-        }
-
-        .nav-cta:hover {
-            background: var(--teal-mid);
-            color: var(--white) !important;
+        .products-content {
+            padding: 50px 0 80px;
         }
 
         /* ─── HERO ────────────────────────────────────────────── */
@@ -128,7 +77,7 @@
             width: 700px;
             height: 700px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(10, 124, 110, 0.09) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 59, 242, 0.09) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -140,7 +89,7 @@
             width: 400px;
             height: 400px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(16, 196, 173, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 59, 242, 0.06) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -157,7 +106,7 @@
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--teal);
+            color: #003BF2;
             margin-bottom: 1.5rem;
         }
 
@@ -166,7 +115,7 @@
             display: inline-block;
             width: 24px;
             height: 2px;
-            background: var(--teal-lt);
+            background: #e8eeff;
         }
 
         h1 {
@@ -180,7 +129,7 @@
 
         h1 em {
             font-style: italic;
-            color: var(--teal);
+            color: #003BF2;
         }
 
         .hero-sub {
@@ -203,7 +152,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--teal);
+            background: #003BF2;
             color: var(--white);
             padding: 0.85rem 1.8rem;
             border-radius: 100px;
@@ -212,13 +161,13 @@
             text-decoration: none;
             letter-spacing: 0.01em;
             transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-            box-shadow: 0 4px 20px rgba(10, 124, 110, 0.25);
+            box-shadow: 0 4px 20px rgba(0, 59, 242, 0.25);
         }
 
         .btn-primary:hover {
-            background: var(--teal-mid);
+            background: #0030c0;
             transform: translateY(-1px);
-            box-shadow: 0 8px 28px rgba(10, 124, 110, 0.3);
+            box-shadow: 0 8px 28px rgba(0, 59, 242, 0.3);
         }
 
         .btn-ghost {
@@ -236,8 +185,8 @@
         }
 
         .btn-ghost:hover {
-            border-color: var(--teal);
-            color: var(--teal);
+            border-color: #003BF2;
+            color: #003BF2;
         }
 
         /* ─── HERO VISUAL ─────────────────────────────────────── */
@@ -260,14 +209,14 @@
             position: absolute;
             inset: 0;
             border-radius: 50%;
-            border: 2px solid rgba(10, 124, 110, 0.15);
+            border: 2px solid rgba(0, 59, 242, 0.15);
             animation: pulse-ring 3.5s ease-in-out infinite;
         }
 
         .cap-outer:nth-child(2) {
             inset: 12%;
             animation-delay: 0.5s;
-            border-color: rgba(10, 124, 110, 0.1);
+            border-color: rgba(0, 59, 242, 0.1);
         }
 
         .cap-core {
@@ -275,18 +224,18 @@
             inset: 22%;
             border-radius: 50%;
             background: conic-gradient(from 200deg,
-                    var(--teal) 0deg,
-                    var(--teal-lt) 80deg,
-                    #a8eddf 150deg,
-                    var(--aqua) 210deg,
-                    var(--teal) 360deg);
+                    #003BF2 0deg,
+                    #e8eeff 80deg,
+                    #e8eeff 150deg,
+                    #f7f9ff 210deg,
+                    #003BF2 360deg);
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow:
                 0 0 0 3px rgba(255, 255, 255, 0.9),
-                0 0 0 5px rgba(10, 124, 110, 0.2),
-                0 20px 60px rgba(10, 124, 110, 0.35);
+                0 0 0 5px rgba(0, 59, 242, 0.2),
+                0 20px 60px rgba(0, 59, 242, 0.35);
             animation: spin-slow 18s linear infinite;
         }
 
@@ -390,7 +339,7 @@
             width: 7px;
             height: 7px;
             border-radius: 50%;
-            background: var(--teal-lt);
+            background: #e8eeff;
             margin-right: 0.4rem;
             vertical-align: middle;
         }
@@ -433,7 +382,7 @@
         .trust-icon {
             width: 18px;
             height: 18px;
-            color: var(--teal);
+            color: #003BF2;
             flex-shrink: 0;
         }
 
@@ -447,7 +396,7 @@
             font-weight: 600;
             letter-spacing: 0.14em;
             text-transform: uppercase;
-            color: var(--teal);
+            color: #003BF2;
             margin-bottom: 0.8rem;
         }
 
@@ -475,7 +424,7 @@
         }
 
         .problem .section-label {
-            color: var(--teal-lt);
+            color: #e8eeff;
         }
 
         .problem h2 {
@@ -501,7 +450,7 @@
         }
 
         .stat-card {
-            border-left: 3px solid var(--teal-lt);
+            border-left: 3px solid #e8eeff;
             padding-left: 1.4rem;
         }
 
@@ -509,7 +458,7 @@
             font-family: var(--serif);
             font-size: 3rem;
             line-height: 1;
-            color: var(--teal-lt);
+            color: #e8eeff;
             letter-spacing: -0.03em;
         }
 
@@ -569,7 +518,7 @@
             font-family: var(--serif);
             font-size: 3.5rem;
             line-height: 1;
-            color: rgba(10, 124, 110, 0.12);
+            color: rgba(0, 59, 242, 0.12);
             letter-spacing: -0.04em;
             margin-bottom: 0.5rem;
         }
@@ -578,7 +527,7 @@
             width: 44px;
             height: 44px;
             border-radius: 10px;
-            background: var(--aqua);
+            background: #f7f9ff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -588,7 +537,7 @@
         .step-icon svg {
             width: 22px;
             height: 22px;
-            color: var(--teal);
+            color: #003BF2;
         }
 
         .step h3 {
@@ -650,8 +599,8 @@
         }
 
         .benefit-item:hover {
-            border-color: var(--teal-lt);
-            box-shadow: 0 4px 20px rgba(10, 124, 110, 0.08);
+            border-color: #e8eeff;
+            box-shadow: 0 4px 20px rgba(0, 59, 242, 0.08);
         }
 
         .benefit-icon {
@@ -659,7 +608,7 @@
             width: 36px;
             height: 36px;
             border-radius: 8px;
-            background: var(--aqua);
+            background: #f7f9ff;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -668,7 +617,7 @@
         .benefit-icon svg {
             width: 18px;
             height: 18px;
-            color: var(--teal);
+            color: #003BF2;
         }
 
         .benefit-content h4 {
@@ -697,7 +646,7 @@
             top: 8px;
             bottom: 8px;
             width: 2px;
-            background: linear-gradient(to bottom, var(--teal), var(--teal-lt), var(--aqua));
+            background: linear-gradient(to bottom, #003BF2, #738edc, #f7f9ff);
         }
 
         .tl-item {
@@ -716,9 +665,9 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: var(--teal);
+            background: #003BF2;
             border: 2px solid var(--white);
-            box-shadow: 0 0 0 2px var(--teal);
+            box-shadow: 0 0 0 2px #003BF2;
         }
 
         .tl-time {
@@ -726,7 +675,7 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--teal);
+            color: #003BF2;
             margin-bottom: 0.3rem;
         }
 
@@ -773,7 +722,7 @@
             font-family: var(--serif);
             font-size: 2.2rem;
             line-height: 1;
-            color: var(--teal);
+            color: #003BF2;
             letter-spacing: -0.03em;
             margin-bottom: 0.3rem;
         }
@@ -794,11 +743,11 @@
         .spec-note {
             margin-top: 3rem;
             padding: 1.4rem 1.8rem;
-            background: var(--aqua);
+            background: #f7f9ff;
             border-radius: 10px;
-            border-left: 4px solid var(--teal);
+            border-left: 4px solid #003BF2;
             font-size: 0.875rem;
-            color: var(--teal);
+            color: #003BF2;
             font-weight: 500;
             line-height: 1.6;
         }
@@ -837,7 +786,7 @@
         .compat-row svg {
             width: 18px;
             height: 18px;
-            color: var(--teal);
+            color: #003BF2;
             flex-shrink: 0;
         }
 
@@ -849,7 +798,7 @@
         }
 
         .compat-callout .section-label {
-            color: var(--teal-lt);
+            color: #e8eeff;
         }
 
         .compat-callout h3 {
@@ -887,7 +836,7 @@
 
         /* ─── CTA ─────────────────────────────────────────────── */
         .cta-section {
-            background: linear-gradient(135deg, var(--teal) 0%, #085e53 100%);
+            background: linear-gradient(135deg, #003BF2 0%, #0030c0 100%);
             text-align: center;
             padding: 120px 5vw;
             position: relative;
@@ -937,7 +886,7 @@
             align-items: center;
             gap: 0.5rem;
             background: var(--white);
-            color: var(--teal);
+            color: #003BF2;
             padding: 0.9rem 2rem;
             border-radius: 100px;
             font-size: 0.95rem;
@@ -972,40 +921,7 @@
             background: rgba(255, 255, 255, 0.08);
         }
 
-        /* ─── FOOTER ──────────────────────────────────────────── */
-        footer {
-            background: var(--ink);
-            color: rgba(255, 255, 255, 0.5);
-            padding: 3rem 5vw;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
 
-        .footer-logo {
-            font-family: var(--serif);
-            font-size: 1.2rem;
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        footer p {
-            font-size: 0.8rem;
-            line-height: 1.6;
-        }
-
-        footer a {
-            color: rgba(255, 255, 255, 0.4);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: var(--teal-lt);
-        }
 
         /* ─── ANIMATIONS ──────────────────────────────────────── */
         .reveal {
@@ -1079,15 +995,73 @@
 
 <body>
 
-    <!-- NAV -->
-    <nav>
-        <a class="nav-logo" href="#"><span>Clyn</span>Cap™</a>
-        <ul class="nav-links">
-            <li><a href="#how">How it works</a></li>
-            <li><a href="#benefits">Benefits</a></li>
-            <li><a href="#specs">Specifications</a></li>
-            <li><a href="#contact" class="nav-cta">Request info</a></li>
-        </ul>
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="topbar-container">
+            <div class="topbar-content">
+                <div class="topbar-left">
+                    <a href="tel:+18887025372" class="topbar-contact-item">
+                        <i class="fas fa-phone topbar-icon"></i>
+                        <span>+1 888 70 ALERA (888.702.5372)</span>
+                    </a>
+                    <a href="mailto:info@aleramedtech.com" class="topbar-contact-item">
+                        <i class="fas fa-envelope topbar-icon"></i>
+                        <span>info@aleramedtech.com</span>
+                    </a>
+
+                </div>
+                <div class="topbar-right">
+                    <a href="#" class="topbar-social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="topbar-social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="topbar-social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="topbar-social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <a href="index.html" class="navbar-logo-link">
+                    <img src="img/aleramedtech_logo.png" alt="Alera Medtech Logo" class="navbar-logo">
+                </a>
+                <button class="navbar-toggle" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li class="navbar-menu-item"><a href="index.html" class="navbar-menu-link">Home</a></li>
+                    <li class="navbar-menu-item"><a href="about.html" class="navbar-menu-link">About Us</a></li>
+                    <li class="navbar-menu-item dropdown">
+                        <a href="#" class="navbar-menu-link">Our Products</a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Neurology</li>
+                            <li><a class="dropdown-item" href="dpncheck-overview.html" target="_blank">DPNCheck
+                                    overview</a></li>
+                            <li><a class="dropdown-item" href="cernode-overview.html">Cernode Neurology Products</a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-header">Critical Care</li>
+                            <li><a class="dropdown-item" href="sureset-overview.html" target="_blank">SureSet Securement
+                                    Devices</a></li>
+                            <li><a class="dropdown-item" href="dermaflush-overview.html">Dermaflush Prefilled Flush
+                                    Syringes</a></li>
+                            <li><a class="dropdown-item" href="clyncap.html">ClynCap Infection Control</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-menu-item dropdown">
+                        <a href="resourses.html" class="navbar-menu-link">Resourses</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="ifu.html" target="_blank">IFU</a></li>
+                            <li><a class="dropdown-item" href="#" target="_blank">Brochures</a></li>
+                            <li><a class="dropdown-item" href="#" target="_blank">Whitepapers</a></li>
+                        </ul>
+                    </li>
+                    <li class="navbar-menu-item"><a href="contact.html" class="navbar-menu-link">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
     <!-- HERO -->
@@ -1403,7 +1377,7 @@
     <!-- COMPATIBILITY -->
     <section class="compat" id="compat">
         <div class="section-label">Compatibility</div>
-        <h2>Works with the connectors<br><em style="color:var(--teal)">you already use.</em></h2>
+        <h2>Works with the connectors<br><em style="color:#003BF2">you already use.</em></h2>
         <div class="compat-layout">
             <div class="compat-list reveal">
                 <div class="compat-row">
@@ -1477,28 +1451,126 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <a class="footer-logo" href="#">ClynCap™</a>
-        <p>A product by Alera &nbsp;·&nbsp; <a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
-        <p>© 2026 Alera. Patent pending. All rights reserved.<br>ClynCap™ is a development-stage product. Claims subject
-            to clinical validation.</p>
+    <!-- Footer -->
+    <footer class="vas-footer" id="vas-footer-locations">
+        <div class="container">
+            <div class="row vas-footer-top g-5">
+                <div class="col-lg-3 mb-4">
+                    <div class="vas-footer-logo">
+                        <img src="img/aleramedtech_logo.png" width="150" alt="">
+                    </div>
+                    <p class="vas-footer-text">
+                        PN: SSIV-5-US, Rev. 1, Nov. 2025<br>
+                        Alera Medtech and Safe-Track Strain Relief Technology are registered trademarks of Alera Medtech
+                        LLC.
+                    </p>
+                    <div class="vas-social-links">
+                        <a href="#" class="vas-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="vas-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 mb-4">
+                    <h3 class="vas-footer-section-title">Useful Links</h3>
+                    <ul class="vas-footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="dpncheck-overview.html">Our Products</a></li>
+                        <li><a href="resourses.html">Resources</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <!-- Global Locations -->
+                <div class="col-lg-7 mb-4" id="vas-footer-locations">
+                    <h3 class="vas-footer-section-title">Locations</h3>
+                    <div class="row">
+                        <!-- Row 1: HQ and MENA -->
+                        <div class="col-md-6 mb-4">
+                            <div class="vas-contact-item mb-3">
+                                <div class="vas-contact-label">GLOBAL HEADQUARTERS</div>
+                                <p class="vas-contact-value">
+                                    <a href="https://maps.google.com/?q=77+Rowe+Street+Suite+2C+Auburndale+MA+02466"
+                                        target="_blank" style="color: inherit; text-decoration: none;">
+                                        Alera Medtech LLC<br>77 Rowe Street, Suite 2C<br>Auburndale, MA 02466
+                                    </a>
+                                </p>
+                                <div class="mt-2" style="font-size: 0.95rem;">
+                                    <div class="mb-1">
+                                        <i class="fas fa-phone me-2" style="color: #003BF2;"></i>
+                                        <a href="tel:+18887025372" style="color: inherit; text-decoration: none;">+1 888
+                                            70 ALERA (888.702.5372)</a>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-envelope me-2" style="color: #003BF2;"></i>
+                                        <a href="mailto:info@aleramedtech.com"
+                                            style="color: inherit; text-decoration: none;">info@aleramedtech.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vas-contact-item">
+                                <div class="vas-contact-label">USA MANUFACTURING</div>
+                                <p class="vas-contact-value">
+                                    <a href="https://maps.google.com/?q=159+W+Mason+Ave+Buckley+WA+98321"
+                                        target="_blank" style="color: inherit; text-decoration: none;">
+                                        159 W Mason Ave<br>Buckley, WA 98321
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="vas-contact-item mb-3">
+                                <div class="vas-contact-label">MIDDLE EAST & NORTH AFRICA</div>
+                                <p class="vas-contact-value">
+                                    <a href="https://maps.google.com/?q=2408+One+Lake+Plaza+Jumeirah+Lake+Towers+Dubai+UAE"
+                                        target="_blank" style="color: inherit; text-decoration: none;">
+                                        2408 One Lake Plaza 24th Floor<br>T2, Cluster T Street, Jumeirah Lake
+                                        Towers<br>Dubai, UAE
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="vas-contact-item">
+                                <div class="vas-contact-label">ASIA</div>
+                                <p class="vas-contact-value">
+                                    <a href="https://maps.google.com/?q=25-C+Hardware+Park+Hyderabad+500005+INDIA"
+                                        target="_blank" style="color: inherit; text-decoration: none;">
+                                        Alera Medtech Pvt Ltd<br>25-C Hardware Park, Imarath Kancha<br>Raviryal,
+                                        Hyderabad - 500005, INDIA
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vas-footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="vas-copyright">© 2026 Alera Medtech LLC. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="vas-footer-bottom-links">
+                            <li><a href="terms-and-condition.html">Terms & Conditions</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="#">Legal</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
+        function toggleMenu() { document.getElementById('navbarMenu').classList.toggle('navbar-menu-active'); }
+
         // Reveal on scroll
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
         }, { threshold: 0.12 });
         reveals.forEach(el => observer.observe(el));
-
-        // Nav scroll style
-        const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            nav.style.boxShadow = window.scrollY > 20
-                ? '0 2px 24px rgba(0,0,0,0.08)' : 'none';
-        });
     </script>
 </body>
 
