@@ -1661,11 +1661,11 @@ html {
     .vas-contact-item,
     .vas-contact-label,
     .vas-copyright {
-        text-align: center;
+        text-align: left;
     }
 
     .vas-social-links {
-        justify-content: center;
+        justify-content: left;
         margin-bottom: 30px;
     }
 
