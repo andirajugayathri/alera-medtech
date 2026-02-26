@@ -4,81 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructions for Use (IFU) – Alera Medtech</title>
+    <title>Duoflush Flush Syringes – Alera Medtech</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-        rel="stylesheet">
     <style>
-        .resource-section {
-            padding: 80px 0;
+        /* Shared styles from our-products.html */
+        .products-content {
+            padding: 50px 60px 80px;
         }
 
-        .resource-card {
-            background: #fff;
-            border: 1px solid #dde3f5;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 24px;
-            transition: box-shadow 0.3s;
-        }
-
-        .resource-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 59, 242, 0.08);
-        }
-
-        .resource-icon {
-            width: 50px;
-            height: 50px;
-            background: #e8eeff;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #003BF2;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .resource-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 12px;
-        }
-
-        .resource-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #003BF2;
-            font-weight: 600;
-            text-decoration: none;
-            border: 2px solid #003BF2;
-            padding: 10px 20px;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-
-        .download-btn:hover {
+        .prod-label {
+            display: inline-block;
             background: #003BF2;
             color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 18px;
+        }
+
+        .prod-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #003BF2;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .prod-intro {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .prod-section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 30px 0 14px;
+        }
+
+        .prod-section-heading.blue {
+            color: #003BF2;
+        }
+
+        .prod-text {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .prod-highlight-box {
+            background: linear-gradient(135deg, #e8eeff 0%, #f5f7ff 100%);
+            border-left: 4px solid #003BF2;
+            border-radius: 0 10px 10px 0;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+
+        .prod-highlight-box p {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .prod-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+        }
+
+        .prod-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            padding: 8px 0;
+        }
+
+        .prod-feature-list li .check {
+            color: #003BF2;
+            font-size: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .products-content {
+                padding: 30px 20px 50px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Topbar -->
     <div class="topbar">
         <div class="topbar-container">
             <div class="topbar-content">
@@ -111,7 +140,6 @@
         </div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-content">
@@ -165,57 +193,180 @@
         </div>
     </nav>
 
-    <section class="sub-hero d-flex align-items-center">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb sub-hero-breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="resourses.html">Resources</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">IFU</li>
-                </ol>
-            </nav>
-            <h1 class="sub-hero-title">Instructions for Use (IFU)</h1>
-            <p class="sub-hero-text">Download the latest technical documentation and instructions for Alera Medtech
-                products.</p>
+    <!-- Hero -->
+    <section class="hero-sectionz" style="background-image: url(img/our\ team.png);">
+        <div class="hero-overlayz"></div>
+        <div class="hero-contenty container">
+            <h1 class="hero-titlez mb-4">Our Team</h1>
         </div>
     </section>
 
-    <main class="resource-section container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">DermaFlush™</h3>
-                    <a href="pdf/Derma Flush_Flush Syringe.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
+    <!-- Team -->
+    <div class="our-team-container">
+        <!-- First Profile -->
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 1.jpg" alt="Satish Profile" class="our-team-image" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Foley Catheter Securement Device</h3>
-                    <a href="pdf/Foley Catheter Securement Device.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Loop IV Securement Device Adult</h3>
-                    <a href="pdf/Loop IV Securement Device Adult.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Loop IV Securement Device Paediatric</h3>
-                    <a href="pdf/Loop IV Securement Device Paediatric.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">SATISH VANKAYALAPATI</h1>
+                    <div class="our-team-title">CHAIRMAN</div>
+                    <p class="our-team-description">
+                        Satish is the Founder/CEO of UrbanX Global, which invests in technology-enhanced healthcare and
+                        medical devices, platforms for enhancing and securing the online environment, and real estate.
+                    </p>
+                    <p class="our-team-description">
+                        Satish recently served as the President of Capri Capital Partners, the $3.6 billion real estate
+                        asset management firm and was a partner at McKinsey & Company, where he opened the Firm's Doha
+                        office and co-led the real estate and infrastructure practice and served in the technology
+                        practice.
+                    </p>
                 </div>
             </div>
         </div>
-    </main>
+
+        <div class="our-team-divider"></div>
+
+        <!-- Second Profile -->
+        <div class="our-team-card">
+            <div class="row our-team-reverse">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 2.jpg" alt="Robert Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">ROBERT RUDELIUS</h1>
+                    <div class="our-team-title">PRESIDENT & CHIEF EXECUTIVE OFFICER</div>
+                    <p class="our-team-description">
+                        Robert is a Managing Partner of UrbanX Global, an investment company focused on innovation
+                        markets. Robert also founded Noble Ventures to provide advisory services to medtech, e-commerce
+                        and IT companies.
+                    </p>
+                    <p class="our-team-description">
+                        Robert has served as CEO of Media DVX, Inc. (sold to StarNet), President/COO of Control Data
+                        Systems (sold to British Telecom), Managing Partner of AT&T Solutions and a partner at McKinsey
+                        & Company where he led the Firms IT/Systems practice in Japan and the UK.
+                    </p>
+                    <p class="our-team-description">
+                        Board experience includes PetVivo Holdings, Inc. (PETV) and on Axogen, Inc. (AXGN).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 3.jpg" alt="Satish Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">RICHARD C. CARLSON </h1>
+                    <div class="our-team-title">EVP SALES & MARKETING </div>
+                    <p class="our-team-description">
+                        Richard has more than 20 years of prostate disease market experience and has been involved in
+                        companies focused on the specialty of urology for more than 30 years. Prior to MedicaMetrix,
+                        Richard served as the CEO of ProUroCare Medical, Inc., a developer of a tactile imaging device
+                        that creates a real-time color image of the prostate.
+
+                    </p>
+                    <p class="our-team-description">
+                        Richard has brought to market numerous medical devices for industry leaders such as American
+                        Medical Systems, C.R. Bard, Boston Scientific, Advanced Surgical Intervention, Medtronic, and
+                        Vicon Systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <!-- Second Profile -->
+        <div class="our-team-card">
+            <div class="row our-team-reverse">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 4.jpg" alt="Robert Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">BOB RIOUX </h1>
+                    <div class="our-team-title">EVP ENGINEERING & PRODUCT DEVELOPMENT </div>
+                    <p class="our-team-description">
+                        Bob has over 25 years of experience in developing and commercializing medical devices and
+                        capital equipment. He has 130 issued U.S. patents and has developed and commercialized medical
+                        devices in the gynecology, orthopedic, oncology, blood processing, surgical, general surgery,
+                        and wound care fields. He specializes in minimally invasive devices and the interface between
+                        the device and capital equipment, as well as electrosurgical and electromechanical devices.
+                        Robert has worked for Boston Scientific, Hologic, and Angio Dynamics.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 5.jpg" alt="Satish Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">CHRISTOPHER G. LAFARGE </h1>
+                    <div class="our-team-title">EVP BUSINESS DEVELOPMENT </div>
+                    <p class="our-team-description">
+                        Christopher has provided strategic leadership for early stage, life science, and medical device
+                        companies in the fields of urology, anesthesiology, intensive care, and neuroscience.
+
+                    </p>
+                    <p class="our-team-description">
+                        Christopher is the inventor of ProstaMetrix® which he guided through CE Mark certification. He
+                        was COO of Bach Pharma, a pharmaceutical company developing therapeutics for the treatment of
+                        neurodegenerative diseases. Christopher has an MBA from the Yale School of Management and a BA
+                        in Biology from Harvard College.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <!-- Second Profile -->
+        <div class="our-team-card">
+            <div class="row our-team-reverse">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/image 6.jpg" alt="Robert Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">CARLA SIVAK </h1>
+                    <div class="our-team-title">EVP REGULATORY & QUALITY MANAGEMENT </div>
+                    <p class="our-team-description">
+                        Carla has more than 25 years leading medical device quality, regulatory and clinical research
+                        organizations for companies such as Johnson & Johnson, Edwards Life Sciences, Philips
+                        Healthcare, and C. R. Bard, as well as many startups.
+                    </p>
+                    <p class="our-team-description">
+                        A former Critical Care Registered Nurse with an MS in computer science, Carla advises clients
+                        with computer and software-driven medical devices. Her consulting work has specialized in
+                        helping startup medical device companies bring new technologies to market around the world.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <footer class="vas-footer" id="vas-footer-locations">
         <div class="container">
@@ -326,6 +477,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

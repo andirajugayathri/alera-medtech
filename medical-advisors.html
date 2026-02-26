@@ -4,81 +4,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructions for Use (IFU) – Alera Medtech</title>
+    <title>Duoflush Flush Syringes – Alera Medtech</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
-        rel="stylesheet">
     <style>
-        .resource-section {
-            padding: 80px 0;
+        /* Shared styles from our-products.html */
+        .products-content {
+            padding: 50px 60px 80px;
         }
 
-        .resource-card {
-            background: #fff;
-            border: 1px solid #dde3f5;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 24px;
-            transition: box-shadow 0.3s;
-        }
-
-        .resource-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 59, 242, 0.08);
-        }
-
-        .resource-icon {
-            width: 50px;
-            height: 50px;
-            background: #e8eeff;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #003BF2;
-            font-size: 20px;
-            margin-bottom: 20px;
-        }
-
-        .resource-title {
-            font-size: 22px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 12px;
-        }
-
-        .resource-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #003BF2;
-            font-weight: 600;
-            text-decoration: none;
-            border: 2px solid #003BF2;
-            padding: 10px 20px;
-            border-radius: 6px;
-            transition: all 0.3s;
-        }
-
-        .download-btn:hover {
+        .prod-label {
+            display: inline-block;
             background: #003BF2;
             color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 4px;
+            margin-bottom: 18px;
+        }
+
+        .prod-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #003BF2;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .prod-intro {
+            font-size: 18px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .prod-section-heading {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin: 30px 0 14px;
+        }
+
+        .prod-section-heading.blue {
+            color: #003BF2;
+        }
+
+        .prod-text {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+        .prod-highlight-box {
+            background: linear-gradient(135deg, #e8eeff 0%, #f5f7ff 100%);
+            border-left: 4px solid #003BF2;
+            border-radius: 0 10px 10px 0;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+
+        .prod-highlight-box p {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .prod-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px;
+        }
+
+        .prod-feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 18px;
+            color: #444;
+            line-height: 1.7;
+            padding: 8px 0;
+        }
+
+        .prod-feature-list li .check {
+            color: #003BF2;
+            font-size: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .products-content {
+                padding: 30px 20px 50px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Topbar -->
     <div class="topbar">
         <div class="topbar-container">
             <div class="topbar-content">
@@ -111,7 +140,6 @@
         </div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-content">
@@ -165,57 +193,154 @@
         </div>
     </nav>
 
-    <section class="sub-hero d-flex align-items-center">
-        <div class="container">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb sub-hero-breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="resourses.html">Resources</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">IFU</li>
-                </ol>
-            </nav>
-            <h1 class="sub-hero-title">Instructions for Use (IFU)</h1>
-            <p class="sub-hero-text">Download the latest technical documentation and instructions for Alera Medtech
-                products.</p>
+    <!-- Hero -->
+    <section class="hero-sectionz" style="background-image: url(img/our\ team.png);">
+        <div class="hero-overlayz"></div>
+        <div class="hero-contenty container">
+            <h1 class="hero-titlez mb-4">Medical Advisors</h1>
         </div>
     </section>
 
-    <main class="resource-section container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">DermaFlush™</h3>
-                    <a href="pdf/Derma Flush_Flush Syringe.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
+    <div class="our-team-container">
+        <!-- First Profile -->
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/barbara.png" alt="Barbara Profile" class="our-team-image" />
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Foley Catheter Securement Device</h3>
-                    <a href="pdf/Foley Catheter Securement Device.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Loop IV Securement Device Adult</h3>
-                    <a href="pdf/Loop IV Securement Device Adult.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resource-card">
-                    <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
-                    <h3 class="resource-title">Loop IV Securement Device Paediatric</h3>
-                    <a href="pdf/Loop IV Securement Device Paediatric.pdf" class="download-btn" target="_blank"><i
-                            class="fas fa-download"></i> Download PDF</a>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">BARBARA ANN GRECO, M.D.</h1>
+                    <div class="our-team-title">MEDICAL ADVISOR</div>
+                    <p class="our-team-description">
+                        Dr. Greco was Primary Transplant Nephrologist/Nephrology Director, Baystate Transplant Program,
+                        UMass Chan Baystate Medical Center, Springfield, MA. She practiced nephrology medicine for more
+                        than 35 years and was Associate Professor of Medicine, UMass Chan School of Medicine and was an
+                        Assistant Professor of Medicine at Vanderbilt University Medical Center, Nashville, TN. A
+                        graduate of Harvard Medical School, she did her internal medicine training at Mass General
+                        Hospital and nephrology training at Vanderbilt.
+                    </p>
+                    <p class="our-team-description">
+                        Dr. Greco’s clinical research and studies include over 40 publications, books and chapters, as
+                        well as active roles in dozens of clinical studies. </p>
+                    </p>
                 </div>
             </div>
         </div>
-    </main>
+
+        <div class="our-team-divider"></div>
+
+        <!-- Second Profile -->
+        <div class="our-team-card">
+            <div class="row our-team-reverse">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/shai.png" alt="Shai Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">SHAI N.GOZANI, M.D. , PH.D.</h1>
+                    <div class="our-team-title">MEDICAL ADVISOR </div>
+                    <p class="our-team-description">
+                        Dr. Gozani, M.D., Ph.D., is the Founder/CEO of NeuroMetrix, a spin-off from MIT. He has
+                        published over 30 peer-reviewed scientific articles and has been awarded 25 U.S. and
+                        international patents.
+                    </p>
+                    <p class="our-team-description">
+                        Dr. Gozani holds a B.A. degree in Computer Science, a M.S. degree in Electrical Engineering &
+                        Computer Science (Biomedical Engineering focus) and a Ph.D. in Neurobiology, from the University
+                        of California, Berkeley. He also received his M.D. from Harvard Medical School and the
+                        Harvard-MIT Division of Health Sciences and Technology at M.I.T. </p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/mahesh.png" alt="mahesh Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">MAHESH DESAI, M.D.</h1>
+                    <div class="our-team-title">MEDICAL ADVISOR </div>
+                    <p class="our-team-description">
+                        Dr. Desai is the Head of Robotic Surgery at the Centre for Robotic Surgery (CRS), and co-founder
+                        and Managing Trustee at Muljibhai Patel Urological Hospital (MPUH) in Nadiad, India. One of the
+                        most renowned urologists in India, he has published over 750 scientific papers in the fields of
+                        urology, prostate cancer and robotic surgery. </p>
+                    </p>
+                    <p class="our-team-description">
+                        Dr. Desai has served as President of the World Endourological Society, the Société
+                        Internationale d'Urologie and the Urological Society of India.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <!-- Second Profile -->
+        <div class="our-team-card">
+            <div class="row our-team-reverse">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/david.png" alt="David Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">DAVID R. STASKIN, M.D. </h1>
+                    <div class="our-team-title">MEDICAL ADVISOR </div>
+                    <p class="our-team-description">
+                        Dr. David Staskin, MD is a Urology Specialist in Brighton, MA and has over 44 years of
+                        experience in the medical field after graduating from Hahnemann Medical College and Hospital in
+                        1979. He is affiliated with St. Elizabeth's Medical Center and serves on the faculty of Tufts
+                        University since 2008.
+                    </p>
+                    <p class="our-team-description">
+                        Dr. Staskin has published extensively (> 150 articles) in the areas of female urology, male
+                        voiding dysfunction, BPH and LUTS, neuro-urology, and urodynamics. He is an editor of several
+                        textbooks, is the inventor of the SPARC Sling System and has contributed significantly to the
+                        development of the Monarc, BioArc, and RetroArc sling systems.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="our-team-divider"></div>
+
+        <div class="our-team-card">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="text-center text-md-start">
+                        <img src="img/paul.png" alt="Satish Profile" class="our-team-image" />
+                    </div>
+                </div>
+                <div class="col-md-8" style="align-content: center;">
+                    <h1 class="our-team-name">PAUL A. CHURCH, M.D.</h1>
+                    <div class="our-team-title">MEDICAL ADVISOR </div>
+                    <p class="our-team-description">
+                        Dr. Paul Church was a practicing Urologist for more than 35 years and Assistant Professor of
+                        Surgery at Harvard Medical School in Boston, Massachusetts before retirement in 2017. He was
+                        also involved with clinical research, including studies on the early detection of prostate
+                        cancer utilizing digital rectal exam, transrectal ultrasound, and PSA. </p>
+                    </p>
+                    <p class="our-team-description">
+                        Dr. Church served as an investigator for “Prostaglove,” precursor to the current ProstaMetrix
+                        device. He brings deep clinical experience diagnosing and treating prostatic disorders and
+                        background in industry-sponsored clinical trials. </p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
     <footer class="vas-footer" id="vas-footer-locations">
         <div class="container">
@@ -326,6 +451,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
