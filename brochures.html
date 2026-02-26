@@ -78,26 +78,17 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-content">
-                <a href="index.html" class="navbar-logo-link"><img src="img/aleramedtech_logo.png"
-                        alt="Alera Medtech Logo" class="navbar-logo"></a>
-                <ul class="navbar-menu">
-                    <li class="navbar-menu-item"><a href="index.html" class="navbar-menu-link">Home</a></li>
-                    <li class="navbar-menu-item"><a href="about.html" class="navbar-menu-link">About Us</a></li>
-                    <li class="navbar-menu-item"><a href="our-products.html" class="navbar-menu-link">Our Products</a>
-                    </li>
-                    <li class="navbar-menu-item"><a href="resources.html" class="navbar-menu-link active">Resources</a>
-                    </li>
-                    <li class="navbar-menu-item"><a href="contact.html" class="navbar-menu-link">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
     <section class="sub-hero d-flex align-items-center">
         <div class="container">
+             <nav aria-label="breadcrumb">
+                <ol class="breadcrumb sub-hero-breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="resources.html">Resources</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Brochures</li>
+                </ol>
+            </nav>
             <h1 class="sub-hero-title">Product Brochures</h1>
             <p class="sub-hero-text">Explore our comprehensive range of medical solutions and their clinical
                 applications.</p>
@@ -110,8 +101,6 @@
                 <div class="resource-card">
                     <div class="resource-icon"><i class="fas fa-file-image"></i></div>
                     <h3 class="resource-title">Corporate Portfolio Brochure</h3>
-                    <p class="resource-text">Overview of Alera Medtech's full line of Neurology and Critical Care
-                        solutions.</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PDF</a>
                 </div>
             </div>
@@ -119,8 +108,6 @@
                 <div class="resource-card">
                     <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
                     <h3 class="resource-title">DPNCheck® Single-Page Summary</h3>
-                    <p class="resource-text">Key clinical benefits and device specifications for Point-of-Care testing.
-                    </p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PDF</a>
                 </div>
             </div>
@@ -128,7 +115,6 @@
                 <div class="resource-card">
                     <div class="resource-icon"><i class="fas fa-file-pdf"></i></div>
                     <h3 class="resource-title">SureSet™ Clinical Evidence Brochure</h3>
-                    <p class="resource-text">Focusing on SafeTrak™ technology and its impact on catheter securement.</p>
                     <a href="#" class="download-btn"><i class="fas fa-download"></i> Download PDF</a>
                 </div>
             </div>
