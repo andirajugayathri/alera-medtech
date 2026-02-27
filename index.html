@@ -65,6 +65,12 @@
             box-shadow: 0 8px 15px rgba(0, 59, 242, 0.2);
         }
 
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
         .service-content h3 {
             font-size: 18px;
             font-weight: 700;
@@ -87,7 +93,32 @@
             font-size: 14px;
             color: #6b7280;
             line-height: 1.6;
-            margin-bottom: 0;
+            margin-bottom: 12px;
+        }
+
+        .service-learn-more {
+            font-size: 14px;
+            font-weight: 700;
+            color: #003BF2;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+            margin-top: auto;
+        }
+
+        .service-learn-more:hover {
+            color: #0028a6;
+        }
+
+        .service-learn-more i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-learn-more:hover i {
+            transform: translateX(4px);
         }
 
         .blue-feature-card {
@@ -208,6 +239,9 @@
         @media (max-width: 991px) {
             .blue-feature-card {
                 margin-top: 20px;
+            }
+            .custom-services-section {
+                padding: 40px 0;
             }
         }
 
@@ -927,6 +961,8 @@
                                     <p class="service-desc">A rapid, objective nerve conduction testing solution
                                         designed to support early detection and monitoring of peripheral neuropathy.
                                         Built for accuracy, accessibility, and clinical efficiency.</p>
+                                    <a href="dpncheck-overview.html" class="service-learn-more">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -943,6 +979,8 @@
                                     <p class="service-desc">A comprehensive range of hypodermic, concentric, monopolar,
                                         and IONM electrodes designed for reliable signals, smoother insertion, enhanced
                                         safety, and better ergonomic control in neuro-diagnostics.</p>
+                                    <a href="cernode-overview.html" class="service-learn-more">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -960,6 +998,8 @@
                                         catheter dislodgement and mechanical stress at the insertion site. Enhances
                                         patient safety while improving workflow efficiency across hospitals and
                                         home-care settings.</p>
+                                    <a href="sureset-overview.html" class="service-learn-more">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -977,6 +1017,8 @@
                                         disinfection, simplifying IV-line maintenance and reducing infection risks in
                                         critical care settings. Improves compliance. Reduces contamination. Saves time.
                                     </p>
+                                    <a href="duoflush-overview.html" class="service-learn-more">Learn More <i
+                                            class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1013,7 +1055,7 @@
                                 </li>
                             </ul>
 
-                            <a href="#" class="blue-card-action">
+                            <a href="clyncap.html" class="blue-card-action">
                                 Learn More <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
@@ -1038,7 +1080,7 @@
                 </div>
                 <!-- Image Wrapper -->
                 <div class="partner-cta-image-wrapper">
-                    <img src="img/banner-3.png" alt="Clinical Partner" class="partner-cta-image">
+                    <img src="img/innovation2.jpg" alt="Clinical Partner" class="partner-cta-image">
                 </div>
             </div>
         </div>
@@ -1094,7 +1136,7 @@
         </div>
     </section>
 
-    
+
 
     <div id="footer-placeholder"></div>
 
