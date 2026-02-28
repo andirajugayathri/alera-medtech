@@ -16,6 +16,10 @@
             overflow-x: hidden;
         }
 
+        .text-primary {
+            color: #003BF2 !important;
+        }
+
         /* Banner Section */
         .alera-hero-banner {
             position: relative;
@@ -61,7 +65,7 @@
 
         /* Layout 1: Neurology & Vascular Access */
         .layout-1-section {
-            padding: 100px 0;
+            padding: 60px 0;
             background-color: #ffffff;
         }
 
@@ -163,13 +167,13 @@
         }
 
         .stat-item .stat-text {
-            font-size: 1rem;
+            font-size: 18px;
             color: #4a5568;
             line-height: 1.6;
         }
 
         .headquarters-note {
-            font-size: 0.95rem;
+            font-size: 16px;
             color: #718096;
             font-style: italic;
             border-top: 1px solid #edf2f7;
@@ -260,7 +264,7 @@
         }
 
         .priority-card p {
-            font-size: 0.95rem;
+            font-size: 16px;
             color: #718096;
             line-height: 1.6;
             margin-bottom: 0;
@@ -327,6 +331,11 @@
             margin-top: 20px;
         }
 
+        .lead-text,
+        .feature-bullet {
+            font-size: 18px;
+        }
+
         .emphasis-box .quote-icon {
             font-size: 2rem;
             color: rgba(0, 59, 242, 0.1);
@@ -349,6 +358,10 @@
         .metrics-section {
             padding: 60px 0;
             background-color: #f8faff;
+        }
+
+        .why-it-mattrs p {
+            font-size: 18px !important;
         }
 
         .metrics-grid {
@@ -414,7 +427,7 @@
 
         .specialties-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .specialties-header .section-label {
@@ -527,12 +540,13 @@
 
             .layout-2-content {
                 padding-left: 0;
-                margin-top: 50px;
+                /* margin-top: 50px; */
                 text-align: center;
             }
 
             .priorities-grid {
                 grid-template-columns: 1fr;
+                margin-top: 40px;
             }
 
             .metrics-grid {
@@ -557,9 +571,7 @@
                 font-size: 2rem;
             }
 
-            .layout-1-actions {
-                flex-direction: column;
-            }
+
         }
     </style>
 </head>
@@ -770,7 +782,7 @@
                         <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800; color: #2d3748; line-height: 1.2;">
                             Better devices. Better outcomes. Delivered faster.</h2>
 
-                        <div class="mb-5 text-muted">
+                        <div class="mb-5 text-muted why-it-mattrs">
                             <p class="fs-6 mb-3">By streamlining the development of neurology and vascular access
                                 devices and avoiding traditional delays, we bring advancements to market more quickly
                                 and effectively.</p>
@@ -793,7 +805,7 @@
                                         <i class="fas fa-shield-alt"></i>
                                     </div>
                                     <div class="fw-bold text-dark small" style="line-height: 1.2;">
-                                        Fewer<br>Complications</div>
+                                        Fewer Complications</div>
                                 </div>
                             </div>
 
@@ -805,7 +817,7 @@
                                         style="width: 45px; height: 45px; flex-shrink: 0;">
                                         <i class="fas fa-user-check"></i>
                                     </div>
-                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Stronger<br>Patient
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Stronger Patient
                                         Outcomes</div>
                                 </div>
                             </div>
@@ -818,7 +830,7 @@
                                         style="width: 45px; height: 45px; flex-shrink: 0;">
                                         <i class="fas fa-hand-holding-usd"></i>
                                     </div>
-                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Reduced<br>System
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Reduced System
                                         Costs</div>
                                 </div>
                             </div>
@@ -831,7 +843,7 @@
                                         style="width: 45px; height: 45px; flex-shrink: 0;">
                                         <i class="fas fa-tachometer-alt"></i>
                                     </div>
-                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Greater<br>Workflow
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Greater Workflow
                                         Efficiency</div>
                                 </div>
                             </div>
@@ -851,7 +863,7 @@
             </div>
 
             <!-- Neurology Row -->
-            <div class="row align-items-center mb-5 pb-lg-5">
+            <div class="row align-items-center mb-3 pb-lg-5">
                 <div class="col-lg-6 mb-5 mb-lg-0">
                     <div class="specialty-image-wrapper pe-lg-4">
                         <div class="specialty-floating-icon">
