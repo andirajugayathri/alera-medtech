@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alera Medtech - Reimagining Medical Devices</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Shared Styles */
+        body {
+            font-family: "Montserrat", sans-serif;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        /* Banner Section */
+        .alera-hero-banner {
+            position: relative;
+            background: linear-gradient(135deg, #001f8e 0%, #003BF2 100%);
+            padding: 140px 0 100px 0;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .alera-hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/home-bg.png') center/cover;
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        .alera-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .alera-hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .alera-hero-content p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* Layout 1: Neurology & Vascular Access */
+        .layout-1-section {
+            padding: 100px 0;
+            background-color: #ffffff;
+        }
+
+        .section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .layout-1-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .layout-1-content h3 {
+            font-size: 1.5rem;
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .layout-1-content .description {
+            font-size: 1.1rem;
+            color: #718096;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .layout-1-actions {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .btn-primary-alera {
+            background-color: #003BF2;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary-alera:hover {
+            background-color: #0028a6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-alera {
+            background-color: transparent;
+            color: #003BF2;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #003BF2;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline-alera:hover {
+            background-color: #003BF2;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .layout-1-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+        }
+
+        .stat-item .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #003BF2;
+            line-height: 1;
+            min-width: 80px;
+        }
+
+        .stat-item .stat-text {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .headquarters-note {
+            font-size: 0.95rem;
+            color: #718096;
+            font-style: italic;
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .layout-1-images {
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+        }
+
+        .img-main {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-overlap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 59, 242, 0.2);
+            border: 10px solid white;
+        }
+
+        /* Layout 2: Our Priorities */
+        .layout-2-section {
+            padding: 60px 0;
+        }
+
+        .priorities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .priority-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f4f8;
+            height: 100%;
+        }
+
+        .priority-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 59, 242, 0.1);
+            border-color: #e2e8f0;
+        }
+
+        .priority-card.blue-active {
+            background: #003BF2;
+            color: white;
+            border-color: #003BF2;
+        }
+
+        .priority-icon {
+            font-size: 2rem;
+            color: #003BF2;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .priority-card.blue-active .priority-icon {
+            color: #ffffff;
+        }
+
+        .priority-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: inherit;
+        }
+
+        .priority-card p {
+            font-size: 0.95rem;
+            color: #718096;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .priority-card.blue-active p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .layout-2-content {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            padding-top: 20px;
+        }
+
+        .layout-2-content .section-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .layout-2-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #2d3748;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .layout-2-content p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* Change This Section */
+        .change-this-section {
+            padding: 60px 0;
+            background-color: #f8faff;
+            position: relative;
+        }
+
+        .change-this-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .emphasis-box {
+            background-color: #f8faff;
+            border-left: 4px solid #003BF2;
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .emphasis-box .quote-icon {
+            font-size: 2rem;
+            color: rgba(0, 59, 242, 0.1);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .emphasis-box p {
+            font-size: 1.2rem;
+            color: #003BF2;
+            font-weight: 600;
+            line-height: 1.6;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Why It Matters / Metrics (Redesigned) */
+        .metrics-section {
+            padding: 60px 0;
+            background-color: #f8faff;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 991px) {
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric-card-modern {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 59, 242, 0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            height: 100%;
+        }
+
+        .metric-card-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 59, 242, 0.05);
+            border-color: rgba(0, 59, 242, 0.1);
+        }
+
+        .metric-icon-modern {
+            font-size: 1.8rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8faff;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .metric-text-modern {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2d3748;
+            line-height: 1.3;
+        }
+
+        /* Core Specialties (Alternating Layout) */
+        .specialties-section {
+            padding: 80px 0 100px;
+        }
+
+        .specialties-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .specialties-header .section-label {
+            display: inline-block;
+            color: #003BF2;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .specialties-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .specialty-image-wrapper {
+            position: relative;
+            padding: 30px 0 0 30px;
+        }
+
+        .specialty-floating-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #003BF2;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+        }
+
+        .specialty-main-img {
+            border-radius: 20px;
+            object-fit: cover;
+            width: 100%;
+            height: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .specialty-content h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a202c;
+            margin-bottom: 20px;
+        }
+
+        .specialty-content p {
+            font-size: 1.1rem;
+            color: #718096;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .specialty-feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px 0;
+        }
+
+        .specialty-feature-list li {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .specialty-feature-list li i {
+            color: #003BF2;
+            font-size: 1.25rem;
+        }
+
+        .specialty-btn {
+            background-color: #003BF2;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .specialty-btn:hover {
+            background-color: #1a55db;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(43, 108, 249, 0.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .layout-1-images {
+                min-height: 480px;
+                margin-top: 50px;
+            }
+
+            .layout-2-content {
+                padding-left: 0;
+                margin-top: 50px;
+                text-align: center;
+            }
+
+            .priorities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .alera-hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .layout-1-content h2,
+            .change-this-container h2,
+            .why-it-matters-content h2,
+            .layout-2-content h2,
+            .specialties-header h2 {
+                font-size: 2rem;
+            }
+
+            .layout-1-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Banner -->
+    <!-- <section class="alera-hero-banner">
+        <div class="container">
+            <div class="alera-hero-content">
+                <h1>Redefining the Routine</h1>
+                <p>Bringing meaningful innovation to the medical devices that clinicians and patients depend on every
+                    day.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="sub-hero d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb sub-hero-breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Alera Medtech
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <!-- Page Title -->
+                    <h1 class="sub-hero-title">Alera Medtech</h1>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout 1: Neurology & Vascular Access -->
+    <section class="layout-1-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="layout-1-content">
+                        <div class="section-label" style="color:#003BF2;">Neurology & Vascular Access</div>
+                        <h2>Reimagining the devices that matter most.</h2>
+                        <p class="description">
+                            Alera Medtech brings real innovation to medical devices that clinicians and patients depend
+                            on every day — where progress has been incremental at best, and stagnant at worst.
+                        </p>
+
+                        <div class="layout-1-actions">
+                            <a href="#" class="btn-outline-alera">Our Mission</a>
+                            <a href="#" class="btn-primary-alera">Explore Specialties <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="layout-1-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">30+</div>
+                                <div class="stat-text">Years of stagnation in routine neurology & critical care devices
+                                    — we're here to change that.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2</div>
+                                <div class="stat-text">Core specialties: Neurology and Vascular Access, where
+                                    under-innovation persists at scale.</div>
+                            </div>
+                        </div>
+
+                        <div class="headquarters-note">
+                            <i class="fas fa-map-marker-alt" style="color:#003BF2; margin-right:8px;"></i> Headquartered
+                            in Boston, MA — with an expanding global presence.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="layout-1-images">
+                        <img src="img/banner-3.png" alt="Medical Team" class="img-main">
+                        <img src="img/innovation.jpg" alt="Clinical Setting" class="img-overlap">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Change This Section -->
+    <section class="change-this-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="change-this-header">
+                        <div class="section-label" style="color:#003BF2;">Our Approach</div>
+                        <h2>We set out to change this.</h2>
+                        <div class="emphasis-box">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>While other areas of patient care have made tremendous strides, these essential devices
+                                have not kept pace.</p>
+                        </div>
+                        <a href="#" class="btn-primary-alera mt-4">See our approach <i class="fas fa-arrow-right"
+                                style="margin-left:6px;"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="change-this-text">
+                        <p class="lead-text">In neurology and vascular access, many devices used routinely — hypodermic
+                            needle electrodes, IONM electrodes, catheter securement devices, prefilled syringes,
+                            infection control caps — have changed very little over the past several decades.</p>
+
+                        <div class="feature-bullet d-flex align-items-start gap-3 mb-4">
+                            <i class="fas fa-check-circle text-primary mt-1" style="font-size: 1.25rem;"></i>
+                            <p class="mb-0">We apply modern engineering, advanced materials, and thoughtful
+                                clinician-centered design
+                                to reimagine these products entirely.</p>
+                        </div>
+
+                        <div class="feature-bullet d-flex align-items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1" style="font-size: 1.25rem;"></i>
+                            <p class="mb-0">By avoiding traditional development delays, we bring advancements to market
+                                more quickly
+                                — leading to fewer complications, reduced system costs, and stronger outcomes for
+                                patients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Layout 2: Our Priorities -->
+    <section class="layout-2-section">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-7">
+                    <div class="priorities-grid">
+                        <div class="priority-card">
+                            <span class="priority-icon"><i class="fas fa-bullseye"></i></span>
+                            <h4>Target Under-Innovated Categories</h4>
+                            <p>Focus on high-impact segments in neurology and vascular access that form the daily
+                                foundation of patient care but have seen limited meaningful progress.</p>
+                        </div>
+                        <div class="priority-card">
+                            <span class="priority-icon"><i class="fas fa-tools"></i></span>
+                            <h4>Redesign with Purpose</h4>
+                            <p>Deliver meaningful enhancements in usability, clinical outcomes, signal accuracy, and
+                                seamless integration into fast-paced clinical workflows.</p>
+                        </div>
+                        <div class="priority-card blue-active">
+                            <span class="priority-icon"><i class="fas fa-chart-line"></i></span>
+                            <h4>Scale Efficiently</h4>
+                            <p>Streamline manufacturing in ways that drive sustainable cost efficiencies without
+                                compromising on quality or performance.</p>
+                        </div>
+                        <div class="priority-card">
+                            <span class="priority-icon"><i class="fas fa-hand-holding-usd"></i></span>
+                            <h4>Accessible Pricing</h4>
+                            <p>Offer improved devices at affordable prices, making better quality accessible to
+                                healthcare systems everywhere — with no drop in standards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="layout-2-content">
+                        <div class="section-label" style="color:#003BF2;">Our Priorities</div>
+                        <h2>A clear set of principles guiding every product we build.</h2>
+                        <div class="d-flex gap-3 justify-content-lg-start justify-content-center">
+                            <a href="#" class="btn-primary-alera">Read More</a>
+                            <a href="#" class="btn-outline-alera"><i class="fas fa-play"
+                                    style="font-size: 12px; margin-right:4px;"></i> Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why It Matters Metrics -->
+    <section class="metrics-section">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <!-- Left: Image Area -->
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="position-relative">
+                        <img src="img/banner-3.png" alt="Clinical Innovations" class="img-fluid rounded-4 shadow-sm"
+                            style="width: 100%; object-fit: cover; min-height: 500px;">
+
+                        <!-- Floating Badge -->
+                        <div class="position-absolute bottom-0 end-0 bg-white p-4 rounded-4 shadow-lg text-center"
+                            style="transform: translate(20px, 20px);">
+                            <span class="d-block fw-bold fs-2 text-primary">30+</span>
+                            <span class="d-block small text-muted fw-semibold text-uppercase letter-spacing-1">Years
+                                Experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content & Metrics -->
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="why-it-matters-content">
+                        <div class="section-label" style="color:#003BF2;">Why It Matters</div>
+                        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800; color: #2d3748; line-height: 1.2;">
+                            Better devices. Better outcomes. Delivered faster.</h2>
+
+                        <div class="mb-5 text-muted">
+                            <p class="fs-6 mb-3">By streamlining the development of neurology and vascular access
+                                devices and avoiding traditional delays, we bring advancements to market more quickly
+                                and effectively.</p>
+                            <p class="fs-6 mb-3">This means greater efficiency for neurologists, vascular specialists,
+                                and nursing teams — and above all, stronger outcomes for patients who depend on these
+                                devices every single day.</p>
+                            <p class="fs-6 mb-0">Alera Medtech is working to redefine overlooked areas in medical
+                                devices, delivering safer, more effective, and genuinely accessible solutions for
+                                healthcare providers and patients around the world.</p>
+                        </div>
+
+                        <!-- Mini Metrics Grid -->
+                        <div class="row g-3">
+                            <!-- Metric 1 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">
+                                        Fewer<br>Complications</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 2 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Stronger<br>Patient
+                                        Outcomes</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 3 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-hand-holding-usd"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Reduced<br>System
+                                        Costs</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 4 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Greater<br>Workflow
+                                        Efficiency</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Specialties (Alternating Layout) -->
+    <section class="specialties-section">
+        <div class="container">
+            <div class="specialties-header">
+                <div class="section-label">Core Specialties</div>
+                <h2>Where our innovation is focused</h2>
+            </div>
+
+            <!-- Neurology Row -->
+            <div class="row align-items-center mb-5 pb-lg-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="specialty-image-wrapper pe-lg-4">
+                        <div class="specialty-floating-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <img src="img/banner-3.png" alt="Neurology" class="img-fluid specialty-main-img">
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="specialty-content">
+                        <h3>Neurology</h3>
+                        <p>Reimagining the electrodes, monitoring devices, and procedural tools that neurologists and
+                            neurodiagnostic teams rely on daily. Better signal accuracy. Better usability. Built for
+                            real workflows.</p>
+                        <ul class="specialty-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Needle Electrodes</li>
+                            <li><i class="fas fa-check-circle"></i> IONM Electrodes</li>
+                            <li><i class="fas fa-check-circle"></i> EEG & EMG</li>
+                        </ul>
+                        <a href="#" class="specialty-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vascular Access Row -->
+            <div class="row align-items-center flex-column-reverse flex-lg-row pt-4">
+                <div class="col-lg-5">
+                    <div class="specialty-content">
+                        <h3>Vascular Access</h3>
+                        <p>Transforming the foundational devices used across vascular access procedures every day — from
+                            catheter securement to infection control — with modern engineering and materials that reduce
+                            risk and improve outcomes.</p>
+                        <ul class="specialty-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Catheter Securement</li>
+                            <li><i class="fas fa-check-circle"></i> Prefilled Syringes</li>
+                            <li><i class="fas fa-check-circle"></i> Infection Control</li>
+                        </ul>
+                        <a href="#" class="specialty-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 mb-5 mb-lg-0">
+                    <div class="specialty-image-wrapper">
+                        <div class="specialty-floating-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <img src="img/innovation.jpg" alt="Vascular Access" class="img-fluid specialty-main-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/components.js"></script>
+</body>
+
+</html>
