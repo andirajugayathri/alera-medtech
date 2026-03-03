@@ -9,6 +9,100 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        /* TT Drugs Bold font (local file if available, else fall back to bold sans-serif) */
+        @font-face {
+            font-family: 'TT Drugs';
+            src: local('TT Drugs Bold'), local('TTDrugs-Bold');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* ── Carousel Slide Overlay ── */
+        .hero-slide-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 43%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 60px 40px 30px;
+            background: transparent;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .slide-title {
+            font-family: 'TT Drugs', 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.6rem, 3.2vw, 2.8rem);
+            color: #003BF2;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            pointer-events: auto;
+        }
+
+        .slide-learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: #003BF2;
+            border: 2px solid #003BF2;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.3s ease, color 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .slide-learn-more:hover {
+            background: #003BF2;
+            color: #ffffff;
+        }
+
+        .carousel-item img.banner-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .hero-slide-overlay {
+                width: 100%;
+                background: transparent;
+                justify-content: flex-end;
+                padding: 30px 20px;
+                align-items: center;
+                text-align: center;
+            }
+
+            .slide-title {
+                font-size: clamp(1.3rem, 5vw, 2rem);
+                margin-bottom: 20px;
+            }
+
+            .carousel-item img.banner-img {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .carousel-item img.banner-img {
+                height: 320px;
+            }
+
+            .slide-title {
+                font-size: 1.2rem;
+            }
+        }
+
         /* Shared Styles */
         body {
             font-family: "Montserrat", sans-serif;
@@ -568,7 +662,7 @@
             .why-it-matters-content h2,
             .layout-2-content h2,
             .specialties-header h2 {
-                font-size: 2rem!important;
+                font-size: 2rem !important;
                 text-align: center;
             }
 
@@ -579,8 +673,9 @@
             .change-this-header {
                 text-align: center;
             }
-            .section-label{
-            text-align: center;
+
+            .section-label {
+                text-align: center;
             }
 
 
@@ -602,11 +697,12 @@
         </div>
     </section> -->
 
-    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="10000"
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000"
         data-bs-pause="false">
         <!-- Indicators -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
         </div>
@@ -614,15 +710,36 @@
         <!-- Slides -->
         <div class="carousel-inner">
             <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <img src="img/alera_homepage_banner1.jpeg" class="d-block w-100" alt="Alera Banner 1">
+            <div class="carousel-item active" style="position:relative;">
+                <img src="img/Alera Banners_Home_1.png" class="banner-img"
+                    alt="Innovation for the Devices That Matter Most">
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Innovation for the Devices That Matter Most</h2>
+                    <a href="#" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="img/alera_homepage_banner3.jpeg" class="d-block w-100" alt="Alera Banner 2">
+            <div class="carousel-item" style="position:relative;">
+                <img src="img/Alera Banners_Home_2.png" class="banner-img"
+                    alt="Beyond Incremental. Toward Transformational.">
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Beyond Incremental. Toward Transformational.</h2>
+                    <a href="#" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
             </div>
 
+            <!-- Slide 3 -->
+            <div class="carousel-item" style="position:relative;">
+                <img src="img/Alera Banners_Home_3.png" class="banner-img" alt="Redefining the Standard of Care">
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Redefining the Standard of Care</h2>
+                    <a href="#" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
+            </div>
         </div>
 
         <!-- Controls -->

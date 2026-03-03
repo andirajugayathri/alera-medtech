@@ -21,6 +21,7 @@ html {
 
 .carousel-item {
     height: auto;
+    position: relative;
 }
 
 .hero-content {
@@ -98,26 +99,35 @@ html {
 /* Carousel Controls */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 80, 255, 0.8);
-    border-radius: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 1;
+    width: 52px !important;
+    height: 52px !important;
+    background-color: #003BF2 !important;
+    border-radius: 50% !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    opacity: 1 !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .carousel-control-prev {
-    left: 30px;
+    left: 20px;
 }
 
 .carousel-control-next {
-    right: 30px;
+    right: 20px;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: rgba(0, 80, 255, 1);
+    background-color: #0028a6 !important;
+    opacity: 1 !important;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
 }
 
 .carousel-indicators {
@@ -128,7 +138,7 @@ html {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #003BF2;
+    background-color: #003BF2 !important;
     opacity: 0.5;
     transition: all 0.3s ease;
 }
