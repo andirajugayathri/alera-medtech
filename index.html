@@ -4,843 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alera Medtech</title>
+    <title>Alera Medtech - Reimagining Medical Devices</title>
+    <link rel="icon" type="image/png" href="img/aleramedtech_logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        .custom-services-section {
-            padding: 80px 0;
-            background-color: #f8faff;
-            font-family: "Montserrat", sans-serif;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .services-header h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #003BF2;
-            margin-bottom: 15px;
-        }
-
-        .services-header p {
-            font-size: 18px;
-            color: #718096;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .service-card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            display: flex;
-            gap: 20px;
-            height: 100%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f4f8;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 59, 242, 0.08);
-        }
-
-        .service-icon-wrapper {
-            flex-shrink: 0;
-            width: 65px;
-            height: 65px;
-            background-color: #003BF2;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            font-size: 28px;
-            box-shadow: 0 8px 15px rgba(0, 59, 242, 0.2);
-        }
-
-        .service-content {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .service-content h3 {
-            font-size: 18px;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .service-subtitle {
-            font-size: 13px;
-            font-weight: 600;
-            color: #003BF2;
-            margin-bottom: 12px;
-            display: block;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .service-content p.service-desc {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .service-learn-more {
-            font-size: 14px;
-            font-weight: 700;
-            color: #003BF2;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.3s ease;
-            margin-top: auto;
-        }
-
-        .service-learn-more:hover {
-            color: #0028a6;
-        }
-
-        .service-learn-more i {
-            font-size: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-learn-more:hover i {
-            transform: translateX(4px);
-        }
-
-        .blue-feature-card {
-            background: linear-gradient(135deg, #4A7AFF 0%, #003BF2 100%);
-            border-radius: 16px;
-            padding: 40px 30px;
-            height: 100%;
-            color: white;
-            box-shadow: 0 15px 35px rgba(0, 59, 242, 0.25);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Diagonal background pattern for the blue card */
-        .blue-feature-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.05) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .blue-card-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .blue-feature-card h3 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .blue-feature-card p.main-desc {
-            font-size: 16px;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 30px;
-        }
-
-        .blue-feature-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            margin-bottom: auto;
-            /* Pushes the button to the bottom */
-        }
-
-        .blue-feature-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            font-size: 16px;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.95);
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .blue-feature-list li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .blue-feature-list li .icon-box {
-            margin-right: 15px;
-            color: #003BF2;
-            background-color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .blue-card-action {
-            margin-top: 35px;
-            background-color: white;
-            color: #003BF2;
-            border: none;
-            width: 100%;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .blue-card-action:hover {
-            background-color: #f8f9fa;
-            transform: translateY(-2px);
-            color: #0028a6;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Responsive spacing additions */
-        @media (max-width: 991px) {
-            .blue-feature-card {
-                margin-top: 20px;
-            }
-
-            .custom-services-section {
-                padding: 40px 0;
-            }
-        }
-
-        /* Partner CTA Section */
-        .partner-cta-section {
-            padding: 80px 0;
-            font-family: "Montserrat", sans-serif;
-            background-color: #ffffff;
-        }
-
-        .partner-cta-container {
-            background: linear-gradient(135deg, #6254FF 0%, #4D3CFF 100%);
-            border-radius: 20px;
-            display: flex;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(98, 84, 255, 0.2);
-            position: relative;
-        }
-
-        .partner-cta-content {
-            flex: 0 0 55%;
-            padding: 80px 60px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Circular background accents */
-        .partner-cta-content::before,
-        .partner-cta-content::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-            z-index: -1;
-        }
-
-        .partner-cta-content::before {
-            width: 600px;
-            height: 600px;
-            top: -250px;
-            left: -200px;
-        }
-
-        .partner-cta-content::after {
-            width: 500px;
-            height: 500px;
-            bottom: -150px;
-            right: -100px;
-        }
-
-        .partner-cta-text {
-            color: #ffffff;
-            font-size: 28px;
-            font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 40px;
-            max-width: 95%;
-            z-index: 2;
-        }
-
-        .partner-cta-btn {
-            align-self: flex-start;
-            background-color: #ffffff;
-            color: #4D3CFF;
-            text-decoration: none;
-            padding: 16px 36px;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-        }
-
-        .partner-cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
-            color: #3b28e3;
-        }
-
-        .partner-cta-image-wrapper {
-            flex: 0 0 45%;
-            position: relative;
-            min-height: 100%;
-        }
-
-        .partner-cta-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 991px) {
-            .partner-cta-container {
-                flex-direction: column;
-            }
-
-            .partner-cta-image-wrapper {
-                min-height: 350px;
-            }
-
-            .partner-cta-content {
-                padding: 50px 40px;
-            }
-
-            .partner-cta-text {
-                font-size: 24px;
-                margin-bottom: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .partner-cta-content {
-                padding: 40px 25px;
-            }
-
-            .partner-cta-text {
-                font-size: 20px;
-            }
-
-            .partner-cta-image-wrapper {
-                min-height: 250px;
-            }
-        }
-
-        /* Innovation Section matching reference */
-        .innovation-section {
-            padding: 60px 0;
-            background-color: #f7f9fc;
-            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-            background-size: 20px 20px;
-            font-family: "Montserrat", sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .innovation-image-wrapper {
-            position: relative;
-            margin: 20px 40px 40px 0;
-        }
-
-        .innovation-frame {
-            position: absolute;
-            top: 40px;
-            left: 50px;
-            width: 100%;
-            height: 100%;
-            border: 8px solid #003BF2;
-            z-index: 1;
-        }
-
-        .innovation-img {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            height: auto;
-            display: block;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        }
-
-        .innovation-content {
-            padding-left: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .innovation-title {
-            color: #003BF2;
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            line-height: 1.25;
-            letter-spacing: -0.5px;
-        }
-
-        .innovation-subtitle {
-            font-size: 18px;
-            color: #4a5568;
-            margin-bottom: 30px;
-            line-height: 1.6;
-            max-width: 90%;
-        }
-
-        .innovation-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 35px 0;
-        }
-
-        .innovation-list li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            font-size: 18px;
-            color: #2d3748;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-
-        .innovation-list li i {
-            color: #003BF2;
-            margin-right: 15px;
-            font-size: 20px;
-            margin-top: 2px;
-        }
-
-        .innovation-desc {
-            font-size: 18px;
-            color: #718096;
-            line-height: 1.7;
-            margin-bottom: 0;
-            max-width: 95%;
-        }
-
-        @media (max-width: 991px) {
-            .innovation-section {
-                padding: 60px 0;
-            }
-
-            .innovation-image-wrapper {
-                margin: 0 20px 60px 0;
-            }
-
-            .innovation-frame {
-                top: 20px;
-                left: 20px;
-                border-width: 5px;
-            }
-
-            .innovation-content {
-                padding-left: 0;
-            }
-
-            .innovation-title {
-                font-size: 28px;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <div id="navbar-placeholder"></div>
 
-    <!-- Modal Overlay -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-container">
-            <button class="close-btn" id="closeModalBtn" aria-label="Close"></button>
 
-            <div class="form-header">
-                <h1 id="headerTitle">Request Evaluation Samples</h1>
-                <p id="headerSubtitle">Complete the form below to receive Alera Medtech evaluation samples</p>
-            </div>
-
-            <div class="form-body">
-                <!-- Form Content -->
-                <div class="form-content" id="formContent">
-                    <form id="evaluationForm" novalidate>
-                        <div class="form-group">
-                            <label for="fullName">Full Name <span class="required">*</span></label>
-                            <input type="text" id="fullName" name="fullName" required>
-                            <span class="error-message" id="fullNameError">Please enter your full name</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Work Email <span class="required">*</span></label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="error-message" id="emailError">Please enter a valid work email address</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="designation">Designation <span class="required">*</span></label>
-                            <input type="text" id="designation" name="designation" required
-                                placeholder="e.g., Nurse Manager, Physician, Clinical Director">
-                            <span class="error-message" id="designationError">Please enter your designation</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="department">Department <span class="required">*</span></label>
-                            <input type="text" id="department" name="department" required
-                                placeholder="e.g., Emergency, ICU, Cardiology">
-                            <span class="error-message" id="departmentError">Please enter your department</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="facilityName">Hospital/Clinic Name <span class="required">*</span></label>
-                            <input type="text" id="facilityName" name="facilityName" required>
-                            <span class="error-message" id="facilityNameError">Please enter your hospital or clinic
-                                name</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="productType">Product Type <span class="required">*</span></label>
-                            <select id="productType" name="productType" required>
-                                <option value="">-- Select Product Type --</option>
-                                <option value="sureset-peripheral-iv">Alera Medtech Peripheral IV Securement Device
-                                </option>
-                                <option value="sureset-picc">Alera Medtech PICC Line Securement</option>
-                                <option value="sureset-central-line">Alera Medtech Central Line Securement</option>
-                                <option value="sureset-dialysis">Alera Medtech Dialysis Catheter Securement</option>
-                                <option value="multiple">Multiple Products</option>
-                            </select>
-                            <span class="error-message" id="productTypeError">Please select a product type</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number <span class="required">*</span></label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
-                            <span class="error-message" id="phoneError">Please enter a valid phone number</span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="estimatedVolume">Estimated Monthly Volume</label>
-                            <input type="text" id="estimatedVolume" name="estimatedVolume"
-                                placeholder="e.g., 500 units">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="additionalInfo">Additional Information</label>
-                            <textarea id="additionalInfo" name="additionalInfo"
-                                placeholder="Please share any specific requirements or questions..."></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Submit Request</button>
-                    </form>
-                </div>
-
-                <!-- Thank You Content -->
-                <div class="thank-you-content" id="thankYouContent">
-                    <div class="thank-you-icon">
-                        <div class="checkmark"></div>
-                    </div>
-                    <h2>Thank You!</h2>
-                    <p>Your request has been submitted successfully. Our team will contact you within 24-48 hours.</p>
-
-                    <div class="download-section">
-                        <h3>📄 Download Product Information</h3>
-                        <div class="download-buttons">
-                            <!-- <a href="#" class="download-btn" id="downloadBrochure">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                Download Product Brochure
-                            </a>
-                            <a href="#" class="download-btn" id="downloadGuide">
-                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                                </svg>
-                                Download Clinical Guide
-                            </a> -->
-                        </div>
-                    </div>
-
-                    <button class="submit-btn" id="closeThankYou">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const modal = document.getElementById('modalOverlay');
-        const openBtn = document.getElementById('openModalBtn');
-        const closeBtn = document.getElementById('closeModalBtn');
-        const form = document.getElementById('evaluationForm');
-        const formContent = document.getElementById('formContent');
-        const thankYouContent = document.getElementById('thankYouContent');
-        const headerTitle = document.getElementById('headerTitle');
-        const headerSubtitle = document.getElementById('headerSubtitle');
-        const invalidEmailDomains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com', 'aol.com', 'icloud.com', 'mail.com', 'protonmail.com', 'yandex.com', 'zoho.com'];
-
-        // Open Modal
-        openBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            showForm();
-        });
-
-        // Close Modal
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        closeBtn.addEventListener('click', closeModal);
-
-        // Close on overlay click
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-
-        // Show Form
-        function showForm() {
-            formContent.classList.remove('hidden');
-            thankYouContent.classList.remove('active');
-            headerTitle.textContent = 'Request Evaluation Samples';
-            headerSubtitle.textContent = 'Complete the form below to receive Alera Medtech evaluation samples';
-        }
-
-        // Show Thank You Page
-        function showThankYou() {
-            formContent.classList.add('hidden');
-            thankYouContent.classList.add('active');
-            headerTitle.textContent = 'Request Submitted!';
-            headerSubtitle.textContent = 'Access your resources below';
-            document.querySelector('.modal-container').scrollTop = 0;
-        }
-
-        // Close Thank You and Reset
-        document.getElementById('closeThankYou').addEventListener('click', () => {
-            closeModal();
-            setTimeout(() => {
-                showForm();
-                form.reset();
-            }, 300);
-        });
-
-
-
-        function validateEmail(email) {
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-                return { valid: false, message: 'Please enter a valid email address' };
-            }
-
-            const domain = email.split('@')[1].toLowerCase();
-            if (invalidEmailDomains.includes(domain)) {
-                return { valid: false, message: 'Please use a work email address. Personal email domains (Gmail, Yahoo, Hotmail, etc.) are not accepted' };
-            }
-
-            return { valid: true };
-        }
-
-        function validatePhone(phone) {
-            const phonePattern = /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/;
-            return phonePattern.test(phone.replace(/\s/g, ''));
-        }
-
-        function showError(fieldId, message) {
-            const field = document.getElementById(fieldId);
-            const errorElement = document.getElementById(fieldId + 'Error');
-            field.classList.add('error');
-            errorElement.textContent = message;
-            errorElement.classList.add('show');
-        }
-
-        function clearError(fieldId) {
-            const field = document.getElementById(fieldId);
-            const errorElement = document.getElementById(fieldId + 'Error');
-            field.classList.remove('error');
-            errorElement.classList.remove('show');
-        }
-
-        // Real-time validation for email
-        document.getElementById('email').addEventListener('blur', function () {
-            const email = this.value.trim();
-            if (email) {
-                const validation = validateEmail(email);
-                if (!validation.valid) {
-                    showError('email', validation.message);
-                } else {
-                    clearError('email');
-                }
-            }
-        });
-
-        // Real-time validation for phone
-        document.getElementById('phone').addEventListener('blur', function () {
-            const phone = this.value.trim();
-            if (phone && !validatePhone(phone)) {
-                showError('phone', 'Please enter a valid phone number');
-            } else if (phone) {
-                clearError('phone');
-            }
-        });
-
-        // Clear errors on input
-        form.querySelectorAll('input, select, textarea').forEach(field => {
-            field.addEventListener('input', function () {
-                clearError(this.id);
-            });
-        });
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            let isValid = true;
-
-            // Validate Full Name
-            const fullName = document.getElementById('fullName').value.trim();
-            if (!fullName) {
-                showError('fullName', 'Please enter your full name');
-                isValid = false;
-            } else {
-                clearError('fullName');
-            }
-
-            // Validate Email
-            const email = document.getElementById('email').value.trim();
-            const emailValidation = validateEmail(email);
-            if (!email || !emailValidation.valid) {
-                showError('email', emailValidation.message || 'Please enter a valid work email address');
-                isValid = false;
-            } else {
-                clearError('email');
-            }
-
-            // Validate Designation
-            const designation = document.getElementById('designation').value.trim();
-            if (!designation) {
-                showError('designation', 'Please enter your designation');
-                isValid = false;
-            } else {
-                clearError('designation');
-            }
-
-            // Validate Department
-            const department = document.getElementById('department').value.trim();
-            if (!department) {
-                showError('department', 'Please enter your department');
-                isValid = false;
-            } else {
-                clearError('department');
-            }
-
-            // Validate Facility Name
-            const facilityName = document.getElementById('facilityName').value.trim();
-            if (!facilityName) {
-                showError('facilityName', 'Please enter your hospital or clinic name');
-                isValid = false;
-            } else {
-                clearError('facilityName');
-            }
-
-            // Validate Product Type
-            const productType = document.getElementById('productType').value;
-            if (!productType) {
-                showError('productType', 'Please select a product type');
-                isValid = false;
-            } else {
-                clearError('productType');
-            }
-
-            // Validate Phone
-            const phone = document.getElementById('phone').value.trim();
-            if (!phone || !validatePhone(phone)) {
-                showError('phone', 'Please enter a valid phone number');
-                isValid = false;
-            } else {
-                clearError('phone');
-            }
-
-            if (isValid) {
-                // Here you would typically send the data to your server
-                console.log('Form submitted successfully!', {
-                    fullName,
-                    email,
-                    designation,
-                    department,
-                    facilityName,
-                    productType,
-                    phone,
-                    estimatedVolume: document.getElementById('estimatedVolume').value.trim(),
-                    additionalInfo: document.getElementById('additionalInfo').value.trim()
-                });
-
-                // Show Thank You page
-                showThankYou();
-            } else {
-                // Scroll to first error in modal
-                const firstError = form.querySelector('.error');
-                if (firstError) {
-                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        });
-    </script>
-
-    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="10000"
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000"
         data-bs-pause="false">
         <!-- Indicators -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                aria-current="true"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
         </div>
@@ -848,18 +28,44 @@
         <!-- Slides -->
         <div class="carousel-inner">
             <!-- Slide 1 -->
-            <div class="carousel-item active">
-                <img src="img/alera-banner1.png" class="d-block w-100" alt="Alera Banner 1">
+            <div class="carousel-item active" style="position:relative;">
+                <picture>
+                    <source media="(max-width: 575px)" srcset="img/alera-mobile-banner-1.png">
+                    <img src="img/Alera Banners_Home_1.png" class="banner-img"
+                        alt="Innovation for the Devices That Matter Most">
+                </picture>
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Innovation for the Devices That Matter Most</h2>
+                    <a href="safetrak-technology.html" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
             </div>
 
             <!-- Slide 2 -->
-            <div class="carousel-item">
-                <img src="img/alera-banner2.png" class="d-block w-100" alt="Alera Banner 2">
+            <div class="carousel-item" style="position:relative;">
+                <picture>
+                    <source media="(max-width: 575px)" srcset="img/alera-mobile-banner-2.png">
+                    <img src="img/Alera Banners_Home_2.png" class="banner-img"
+                        alt="Beyond Incremental. Toward Transformational.">
+                </picture>
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Beyond Incremental. Toward Transformational.</h2>
+                    <a href="safetrak-technology.html" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="carousel-item">
-                <img src="img/alera-banner3.png" class="d-block w-100" alt="Alera Banner 3">
+            <div class="carousel-item" style="position:relative;">
+                <picture>
+                    <source media="(max-width: 575px)" srcset="img/alera-mobile-banner-3.png">
+                    <img src="img/Alera Banners_Home_3.png" class="banner-img" alt="Redefining the Standard of Care">
+                </picture>
+                <div class="hero-slide-overlay">
+                    <h2 class="slide-title">Redefining the Standard of Care</h2>
+                    <a href="safetrak-technology.html" class="slide-learn-more">Learn More <i class="fas fa-arrow-right"
+                            style="font-size:0.85rem;"></i></a>
+                </div>
             </div>
         </div>
 
@@ -874,225 +80,138 @@
         </button>
     </div>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-content-grid">
-                <div class="about-image-wrapper">
-                    <img src="img/rapid different.png" alt="Alera Medtech" class="about-main-image">
-                </div>
-
-                <div class="about-text-content">
-                    <h2 class="about-main-title">Alera Medtech:</h2>
-                    <h3 class="about-subtitle">A Radically Different Medical Device Company</h3>
-                    <p class="about-description-text">
-                        Alera Medtech was created with a clear belief: essential medical devices
-                        deserve far more innovation than they have received. Across healthcare,
-                        many widely used devices have changed very little over several decades.
-                        Clinical practice has moved forward, yet the tools clinicians rely on every
-                        day have not kept pace. This creates avoidable complications, unnecessary
-                        costs, and limitations in patient care.
-                    </p>
-                    <p class="about-highlight-text">
-                        Alera exists to overcome these limitations.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- We Deliver Advanced Clinical Solutions -->
-    <section class="custom-services-section">
-        <div class="container">
-            <div class="services-header">
-                <h2>We Deliver Advanced Clinical Solutions</h2>
-                <p>Innovative technologies built for neurology and critical care environments.</p>
-            </div>
-
-            <div class="row g-4 ai-stretch">
-                <div class="col-lg-8">
-                    <div class="row g-4 h-100">
-                        <!-- Service Card 1 -->
-                        <div class="col-md-6">
-                            <div class="service-card">
-                                <div class="service-icon-wrapper">
-                                    <i class="fas fa-laptop-medical"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h3>DPNCheck®</h3>
-                                    <span class="service-subtitle">Point-of-Care Neuropathy Testing</span>
-                                    <p class="service-desc">A rapid, objective nerve conduction testing solution
-                                        designed to support early detection and monitoring of peripheral neuropathy.
-                                        Built for accuracy, accessibility, and clinical efficiency.</p>
-                                    <a href="dpncheck-overview.html" class="service-learn-more">Learn More <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service Card 2 -->
-                        <div class="col-md-6">
-                            <div class="service-card">
-                                <div class="service-icon-wrapper">
-                                    <i class="fas fa-wave-square"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h3>Cernode™ Electro-Diagnostic Devices</h3>
-                                    <span class="service-subtitle">Advanced EMG & Neuro Monitoring Electrodes</span>
-                                    <p class="service-desc">A comprehensive range of hypodermic, concentric, monopolar,
-                                        and IONM electrodes designed for reliable signals, smoother insertion, enhanced
-                                        safety, and better ergonomic control in neuro-diagnostics.</p>
-                                    <a href="cernode-overview.html" class="service-learn-more">Learn More <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service Card 3 -->
-                        <div class="col-md-6">
-                            <div class="service-card">
-                                <div class="service-icon-wrapper">
-                                    <i class="fas fa-hand-holding-medical"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h3>SureSet™ Securement Devices</h3>
-                                    <span class="service-subtitle">Tubing-Centric Strain Relief Technology</span>
-                                    <p class="service-desc">An innovative securement solution designed to reduce
-                                        catheter dislodgement and mechanical stress at the insertion site. Enhances
-                                        patient safety while improving workflow efficiency across hospitals and
-                                        home-care settings.</p>
-                                    <a href="sureset-overview.html" class="service-learn-more">Learn More <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Service Card 4 -->
-                        <div class="col-md-6">
-                            <div class="service-card">
-                                <div class="service-icon-wrapper">
-                                    <i class="fas fa-syringe"></i>
-                                </div>
-                                <div class="service-content">
-                                    <h3>Duoflush™ Integrated Flush System</h3>
-                                    <span class="service-subtitle">Disinfection + Flushing in One Step</span>
-                                    <p class="service-desc">A prefilled saline flush syringe with integrated
-                                        disinfection, simplifying IV-line maintenance and reducing infection risks in
-                                        critical care settings. Improves compliance. Reduces contamination. Saves time.
-                                    </p>
-                                    <a href="duoflush-overview.html" class="service-learn-more">Learn More <i
-                                            class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Side: Blue Card -->
-                <div class="col-lg-4">
-                    <div class="blue-feature-card">
-                        <div class="blue-card-content">
-                            <h3>ClynCap™</h3>
-                            <p class="main-desc"><strong>Next-Generation IV Port Protection</strong></p>
-                            <p class="main-desc">A drop-in disinfecting cap delivering up to 10 days of sustained
-                                antimicrobial
-                                protection —
-                                without changing clinical workflow.</p>
-
-                            <ul class="blue-feature-list">
-                                <li>
-                                    <div class="icon-box"><i class="fas fa-shield-virus"></i></div>
-                                    <span>Dual-mechanism antimicrobial action</span>
-                                </li>
-                                <li>
-                                    <div class="icon-box"><i class="fas fa-tint"></i></div>
-                                    <span>70% Isopropyl alcohol</span>
-                                </li>
-                                <li>
-                                    <div class="icon-box"><i class="fas fa-link"></i></div>
-                                    <span>Standard luer-lock compatibility</span>
-                                </li>
-                                <li>
-                                    <div class="icon-box"><i class="fas fa-hospital-user"></i></div>
-                                    <span>Designed for ICU, oncology & long-term care</span>
-                                </li>
-                            </ul>
-
-                            <a href="clyncap.html" class="blue-card-action">
-                                Learn More <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Become a Partner -->
-    <section class="partner-cta-section">
-        <div class="container">
-            <div class="partner-cta-container">
-                <div class="partner-cta-content">
-                    <h2 class="partner-cta-text">
-                        Alera MedTech collaborates with healthcare providers, distributors, and clinical partners
-                        worldwide to expand access to innovative neuro and critical care technologies.
-                    </h2>
-                    <a href="#" class="partner-cta-btn">
-                        Become a Partner
-                    </a>
-                </div>
-                <!-- Image Wrapper -->
-                <div class="partner-cta-image-wrapper">
-                    <img src="img/innovation2.jpg" alt="Clinical Partner" class="partner-cta-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Innovation Overview Section -->
-    <section class="innovation-section">
+    <!-- Layout 1: Neurology & Vascular Access -->
+    <section class="layout-1-section">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Image side -->
-                <div class="col-lg-5">
-                    <div class="innovation-image-wrapper">
-                        <div class="innovation-frame"></div>
-                        <img src="img/innovation3.jpg" alt="Clinical Challenges" class="innovation-img">
+                <div class="col-lg-6">
+                    <div class="layout-1-content">
+                        <div class="section-label" style="color:#003BF2;">Neurology & Vascular Access</div>
+                        <h2>Reimagining the devices that matter most.</h2>
+                        <p class="description">
+                            Alera Medtech brings real innovation to medical devices that clinicians and patients depend
+                            on every day — where progress has been incremental at best, and stagnant at worst.
+                        </p>
+
+                        <div class="layout-1-actions">
+                            <a href="about.html" class="btn-outline-alera">Our Mission</a>
+                            <a href="dpncheck-overview.html" class="btn-primary-alera">Explore Specialties <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+
+                        <div class="layout-1-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">30+</div>
+                                <div class="stat-text">Years of stagnation in routine neurology & critical care devices
+                                    — we're here to change that.</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2</div>
+                                <div class="stat-text">Core specialties: Neurology and Vascular Access, where
+                                    under-innovation persists at scale.</div>
+                            </div>
+                        </div>
+
+                        <div class="headquarters-note">
+                            <i class="fas fa-map-marker-alt" style="color:#003BF2; margin-right:8px;"></i> Headquartered
+                            in Boston, MA — with an expanding global presence.
+                        </div>
                     </div>
                 </div>
-                <!-- Content side -->
+                <div class="col-lg-6">
+                    <div class="layout-1-images">
+                        <img src="img/reimaging-img1.png" alt="Medical Team" class="img-main">
+                        <img src="img/reimaging-img2.png" alt="Clinical Setting" class="img-overlap">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Change This Section -->
+    <section class="change-this-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="change-this-header">
+                        <div class="section-label" style="color:#003BF2;">Our Approach</div>
+                        <h2>Better devices. Better outcomes. Delivered faster.</h2>
+                        <div class="emphasis-box">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            <p>While other areas of patient care have made tremendous strides, these essential devices
+                                have not kept pace.</p>
+                        </div>
+                        <a href="safetrak-technology.html" class="btn-primary-alera mt-4">See our approach <i class="fas fa-arrow-right"
+                                style="margin-left:6px;"></i></a>
+                    </div>
+                </div>
                 <div class="col-lg-6 offset-lg-1">
-                    <div class="innovation-content">
-                        <h2 class="innovation-title">Innovation That Solves Real Clinical Challenges</h2>
+                    <div class="change-this-text">
+                        <p class="lead-text">In neurology and vascular access, many devices used routinely — hypodermic
+                            needle electrodes, IONM electrodes, catheter securement devices, prefilled syringes,
+                            infection control caps — have changed very little over the past several decades.</p>
 
-                        <p class="innovation-subtitle">Across neurology and critical care, Alera MedTech focuses on
-                            solving persistent device challenges:</p>
+                        <div class="feature-bullet d-flex align-items-start gap-3 mb-4">
+                            <i class="fas fa-check-circle text-primary mt-1" style="font-size: 1.25rem;"></i>
+                            <p class="mb-0">We apply modern engineering, advanced materials, and thoughtful
+                                clinician-centered design
+                                to reimagine these products entirely.</p>
+                        </div>
 
-                        <ul class="innovation-list">
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Inconsistent signal accuracy</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Infection risks</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Needlestick safety concerns</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>Workflow inefficiencies</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-check-circle"></i>
-                                <span>High operational costs</span>
-                            </li>
-                        </ul>
+                        <div class="feature-bullet d-flex align-items-start gap-3">
+                            <i class="fas fa-check-circle text-primary mt-1" style="font-size: 1.25rem;"></i>
+                            <p class="mb-0">By avoiding traditional development delays, we bring advancements to market
+                                more quickly
+                                — leading to fewer complications, reduced system costs, and stronger outcomes for
+                                patients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                        <p class="innovation-desc">Our solutions combine engineering precision, clinical insight, and
-                            scalable manufacturing to deliver accessible innovation without compromising quality.</p>
+    <!-- Layout 2: Our Priorities -->
+    <section class="layout-2-section">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-7">
+                    <div class="priorities-grid">
+                        <div class="priority-card">
+                            <span class="priority-icon"><i class="fas fa-bullseye"></i></span>
+                            <h4>Target Under-Innovated Categories</h4>
+                            <p>Focus on high-impact segments in neurology and vascular access that form the daily
+                                foundation of patient care but have seen limited meaningful progress.</p>
+                        </div>
+                        <div class="priority-card blue-active">
+                            <span class="priority-icon"><i class="fas fa-tools"></i></span>
+                            <h4>Redesign with Purpose</h4>
+                            <p>Deliver meaningful enhancements in usability, clinical outcomes, signal accuracy, and
+                                seamless integration into fast-paced clinical workflows.</p>
+                        </div>
+                        <div class="priority-card blue-active">
+                            <span class="priority-icon"><i class="fas fa-chart-line"></i></span>
+                            <h4>Scale Efficiently</h4>
+                            <p>Streamline manufacturing in ways that drive sustainable cost efficiencies without
+                                compromising on quality or performance.</p>
+                        </div>
+                        <div class="priority-card">
+                            <span class="priority-icon"><i class="fas fa-hand-holding-usd"></i></span>
+                            <h4>Accessible Pricing</h4>
+                            <p>Offer improved devices at affordable prices, making better quality accessible to
+                                healthcare systems everywhere — with no drop in standards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="layout-2-content">
+                        <div class="section-label" style="color:#003BF2;">Our Priorities</div>
+                        <h2>A clear set of principles guiding every product we build.</h2>
+                        <div class="d-flex gap-3 justify-content-lg-start justify-content-center">
+                            <a href="about.html" class="btn-primary-alera">Read More</a>
+                            <a href="dpncheck-overview.html" class="btn-outline-alera"><i class="fas fa-play"
+                                    style="font-size: 12px; margin-right:4px;"></i> Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1100,28 +219,171 @@
     </section>
 
 
+
+    <!-- Why It Matters Metrics -->
+    <section class="metrics-section">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <!-- Left: Image Area -->
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="position-relative">
+                        <img src="img/why-it-matters-img.png" alt="Clinical Innovations" class="img-fluid rounded-4 shadow-sm"
+                            style="width: 100%; object-fit: cover; min-height: 500px;">
+
+                        <!-- Floating Badge -->
+                        <div class="position-absolute bottom-0 end-0 bg-white p-4 rounded-4 shadow-lg text-center"
+                            style="transform: translate(20px, 20px);">
+                            <span class="d-block fw-bold fs-2 text-primary">30+</span>
+                            <span class="d-block small text-muted fw-semibold text-uppercase letter-spacing-1">Years
+                                Experience</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Content & Metrics -->
+                <div class="col-lg-6 offset-lg-1">
+                    <div class="why-it-matters-content">
+                        <div class="section-label" style="color:#003BF2;">Why It Matters</div>
+                        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 800; color: #2d3748; line-height: 1.2;">
+                            We reimagine legacy, essential devices to improve outcomes.</h2>
+
+                        <div class="mb-5 text-muted why-it-mattrs">
+                            <p class="fs-6 mb-3">By streamlining the development of neurology and vascular access
+                                devices and avoiding traditional delays, we bring advancements to market more quickly
+                                and effectively.</p>
+                            <p class="fs-6 mb-3">This means greater efficiency for neurologists, vascular specialists,
+                                and nursing teams — and above all, stronger outcomes for patients who depend on these
+                                devices every single day.</p>
+                            <p class="fs-6 mb-0">Alera Medtech is working to redefine overlooked areas in medical
+                                devices, delivering safer, more effective, and genuinely accessible solutions for
+                                healthcare providers and patients around the world.</p>
+                        </div>
+
+                        <!-- Mini Metrics Grid -->
+                        <div class="row g-3">
+                            <!-- Metric 1 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">
+                                        Fewer Complications</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 2 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Stronger Patient
+                                        Outcomes</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 3 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-hand-holding-usd"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Reduced System
+                                        Costs</div>
+                                </div>
+                            </div>
+
+                            <!-- Metric 4 -->
+                            <div class="col-sm-6">
+                                <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-3 border"
+                                    style="border-color: rgba(0,59,242,0.05) !important;">
+                                    <div class="text-primary fs-4 bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                                        style="width: 45px; height: 45px; flex-shrink: 0;">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                    </div>
+                                    <div class="fw-bold text-dark small" style="line-height: 1.2;">Greater Workflow
+                                        Efficiency</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Specialties (Alternating Layout) -->
+    <section class="specialties-section">
+        <div class="container">
+            <div class="specialties-header">
+                <div class="section-label">Core Specialties</div>
+                <h2>Where our innovation is focused.</h2>
+            </div>
+
+            <!-- Neurology Row -->
+            <div class="row align-items-center mb-3 pb-lg-5">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="specialty-image-wrapper pe-lg-4">
+                        <div class="specialty-floating-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <img src="img/alera-neorology.jpeg" alt="Neurology" class="img-fluid specialty-main-img">
+                    </div>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="specialty-content">
+                        <h3>Neurology</h3>
+                        <p>Reimagining the electrodes, monitoring devices, and procedural tools that neurologists and
+                            neurodiagnostic teams rely on daily. Better signal accuracy. Better usability. Built for
+                            real workflows.</p>
+                        <ul class="specialty-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Needle Electrodes</li>
+                            <li><i class="fas fa-check-circle"></i> IONM Electrodes</li>
+                            <li><i class="fas fa-check-circle"></i> EEG & EMG</li>
+                        </ul>
+                        <a href="about.html" class="specialty-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vascular Access Row -->
+            <div class="row align-items-center flex-column-reverse flex-lg-row pt-4">
+                <div class="col-lg-5">
+                    <div class="specialty-content">
+                        <h3>Vascular Access</h3>
+                        <p>Transforming the foundational devices used across vascular access procedures every day — from
+                            catheter securement to infection control — with modern engineering and materials that reduce
+                            risk and improve outcomes.</p>
+                        <ul class="specialty-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Catheter Securement</li>
+                            <li><i class="fas fa-check-circle"></i> Prefilled Syringes</li>
+                            <li><i class="fas fa-check-circle"></i> Infection Control</li>
+                        </ul>
+                        <a href="about.html" class="specialty-btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 mb-5 mb-lg-0">
+                    <div class="specialty-image-wrapper">
+                        <div class="specialty-floating-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <img src="img/alera-vascular.jpeg" alt="Vascular Access" class="img-fluid specialty-main-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div id="footer-placeholder"></div>
 
-    <!-- Video Modal -->
-    <div id="videoModal" class="video-modal" aria-hidden="true" style="display:none;">
-        <div class="video-modal-overlay"
-            style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1050;display:flex;align-items:center;justify-content:center;">
-            <div class="video-modal-container" role="dialog" aria-modal="true"
-                style="background:#000;border-radius:8px;max-width:90%;width:900px;max-height:90%;overflow:hidden;position:relative;">
-                <button id="videoModalClose" aria-label="Close video"
-                    style="position:absolute;right:10px;top:8px;z-index:2;background:transparent;border:none;color:#fff;font-size:28px;cursor:pointer;">&times;</button>
-                <video id="modalVideo" controls playsinline
-                    style="width:100%;height:100%;display:block;background:#000;">
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-
     <script src="js/components.js"></script>
 </body>
 
