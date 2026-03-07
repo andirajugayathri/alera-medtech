@@ -1543,6 +1543,12 @@ html {
     text-decoration: none;
     transition: all 0.3s;
 }
+.vas-footer-links a {
+    color: #6c757d;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
 
 .vas-social-link:hover {
     background-color: #003BF2;
@@ -4211,6 +4217,11 @@ html {
     color: #003BF2;
     margin-bottom: 20px;
 }
+.specialty-content h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+}
 
 .specialty-content p {
     font-size: 1.1rem;
@@ -4219,10 +4230,16 @@ html {
     margin-bottom: 30px;
 }
 
-.specialty-feature-list {
+.specialty-feature-list{
     list-style: none;
     padding: 0;
     margin: 0 0 30px 0;
+}
+
+.specialty-feature-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
 }
 
 .specialty-feature-list li {
@@ -4235,7 +4252,22 @@ html {
     gap: 12px;
 }
 
+.specialty-feature-lists li {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 .specialty-feature-list li i {
+    color: #003BF2;
+    font-size: 1.25rem;
+}
+
+.specialty-feature-lists li i {
     color: #003BF2;
     font-size: 1.25rem;
 }
@@ -5156,7 +5188,7 @@ sup {
             font-size: clamp(2rem, 3.2vw, 3rem);
             line-height: 1.12;
             letter-spacing: -0.025em;
-            color: var(--ink);
+            /* color: var(--ink); */
             margin-bottom: 1.2rem;
         }
 
