@@ -6562,6 +6562,12 @@ h2 {
     .al-p-card-featured {
         grid-column: span 1;
     }
+    .al-p-grid {
+        padding: 20px;
+    }
+    .al-p-pipeline-box {
+        margin: 0 20px;
+    }
 }
 
 .al-p-pipeline-box {
